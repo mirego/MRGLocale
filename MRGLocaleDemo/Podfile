@@ -1,0 +1,13 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, "6.0"
+
+inhibit_all_warnings!
+
+target "MRGLocaleDemo" do
+  pod 'MRGControlPanel', :git => 'git@github.com:mirego/MRGControlPanel.git'
+end
+
+target "MRGLocaleDemoTests" do
+
+end
+

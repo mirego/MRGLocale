@@ -186,6 +186,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F151A3B18C90B76000928BF /* Build configuration list for PBXNativeTarget "MRGLocaleDemo" */;
 			buildPhases = (
+				4F44A91A18D1EC8C00CF28AB /* ShellScript */,
 				BC18790CE4304EEA9DF7420F /* Check Pods Manifest.lock */,
 				4F151A0B18C90B76000928BF /* Sources */,
 				4F151A0C18C90B76000928BF /* Frameworks */,
@@ -273,6 +274,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4F44A91A18D1EC8C00CF28AB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ruby ${SRCROOT}/Scripts/fetch_locales.rb ${SRCROOT}/MRGLocaleDemo/en.lproj/Localizable.strings http://accent-qa.herokuapp.com/api/projects/1/formatted_render?render_format=strings\nruby ${SRCROOT}/Scripts/fetch_locales.rb ${SRCROOT}/MRGLocaleDemo/fr.lproj/Localizable.strings http://accent-qa.herokuapp.com/api/projects/1/formatted_render?render_format=strings";
+		};
 		793F1C0D3D3F4E3996EC6C16 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

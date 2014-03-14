@@ -4,7 +4,7 @@
 inhibit_all_warnings!
 
 target "MRGLocaleDemo" do
-  pod 'MRGControlPanel', :git => 'git@github.com:mirego/MRGControlPanel.git'
+  pod 'MRGControlPanel', '~> 0.0.4'
 end
 
 target "MRGLocaleDemoTests" do

@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/mirego/MRGLocale.git', :tag => s.version.to_s }
   s.source_files = 'MRGLocale/*.{h,m}'
   s.requires_arc = true
-  s.ios.deployment_target = '5.0'
+  s.ios.deployment_target = '7.0'
   
-  s.dependency 'MRGControlPanel', '~> 0.0.4'
+  #s.dependency 'name', '~> 0.0.0'
 end
 

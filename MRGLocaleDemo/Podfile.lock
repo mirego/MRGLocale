@@ -2,11 +2,7 @@ PODS:
   - MRGControlPanel (0.0.4)
 
 DEPENDENCIES:
-  - MRGControlPanel (from `git@github.com:mirego/MRGControlPanel.git`)
-
-EXTERNAL SOURCES:
-  MRGControlPanel:
-    :git: git@github.com:mirego/MRGControlPanel.git
+  - MRGControlPanel (~> 0.0.4)
 
 SPEC CHECKSUMS:
   MRGControlPanel: edf68875a2769335e91c03d1a1683b4db394821f

@@ -26,8 +26,9 @@
     if (self) {
         _displayName = MRGString(@"MRGLocale");
         
-        [[MRGLocale sharedInstance] setDefaultDynamicLocaleRefs:@[[[MRGDynamicLocaleRef alloc] initWithLangIdentifier:@"en" url:[NSURL URLWithString:@"http://vroyc.com/en.strings"]],
-                                                    [[MRGDynamicLocaleRef alloc] initWithLangIdentifier:@"fr" url:[NSURL URLWithString:@"http://vroyc.com/fr.strings"]]]];
+//        NSArray *dynamicLocaleRefs = @[[[MRGDynamicLocaleRef alloc] initWithLangIdentifier:@"en" url:[NSURL URLWithString:@"http://vroyc.com/en.strings"]],
+//          [[MRGDynamicLocaleRef alloc] initWithLangIdentifier:@"fr" url:[NSURL URLWithString:@"http://vroyc.com/fr.strings"]]];
+//        [[MRGLocale sharedInstance] setDefaultDynamicLocaleRefs:dynamicLocaleRefs];
     }
     return self;
 }

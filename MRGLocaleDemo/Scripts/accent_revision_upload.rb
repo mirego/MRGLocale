@@ -1,6 +1,8 @@
-require 'rest_client'
+# encoding: UTF-8
 
-accent_base_url = "http://accent-qa.herokuapp.com/api/"
+require 'rest-client'
+
+accent_base_url = "http://accent-qa.herokuapp.com"
 
 locale_format_exception = Exception.new "Second argument should be your development language locale file path"
 
@@ -13,18 +15,15 @@ locale_file = ARGV[1]
 raise locale_format_exception if !File.exists?(locale_file) || File.directory?(locale_file)
 
 acceptable_response_code = (200...300).to_a
-post_revision_path = "revisions?project_id=#{accent_project_id}"
-puts "#{accent_base_url}#{post_revision_path}"
-puts '\n'
-response = RestClient.post("#{accent_base_url}#{post_revision_path}",
-  {
-    :revisions => {
+post_revision_path = "/api/revisions?project_id=#{accent_project_id}"
+
+response = RestClient.post("#{accent_base_url}#{post_revision_path}",{
+    :revision => {
       :filename => File.basename(locale_file),
       :file     => File.new(locale_file, 'rb')
     }
   })
-
-puts response.code
-puts '\n'
 puts response.to_str
-raise Exception.new "Revision upload failed" unless acceptable_response_code.include? response.code
+puts response.code
+
+raise Exception.new "Revision upload failed" unless acceptable_response_code.include? response.code.to_i

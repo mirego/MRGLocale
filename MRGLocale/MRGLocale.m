@@ -209,9 +209,15 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
 
 - (NSArray *)archivedDynamicLocaleRefs
 {
+    NSArray *result = nil;
+    
     [[NSUserDefaults standardUserDefaults] synchronize];
     NSData *dynamicLocalesRef = [[NSUserDefaults standardUserDefaults] objectForKey:kDynamicLocalesRefUserDefaultKey];
-    return [NSKeyedUnarchiver unarchiveObjectWithData:dynamicLocalesRef];
+    
+    if (dynamicLocalesRef != nil) {
+        result = [NSKeyedUnarchiver unarchiveObjectWithData:dynamicLocalesRef];
+    }
+    return result;
 }
 
 

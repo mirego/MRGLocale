@@ -50,10 +50,15 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
 
 - (NSString *)localizedStringForKey:(NSString *)key
 {
+    return [self localizedStringForKey:key inTable:nil];
+}
+
+- (NSString *)localizedStringForKey:(NSString *)key inTable:(NSString *)tableName
+{
     NSParameterAssert(key);
     NSString *retVal = nil;
     if (self.hasDynamicLocales) retVal = [[self dynamicLocalesBundle] localizedStringForKey:key value:nil table:[self defaultLocaleTable]];
-    if (!retVal || [retVal isEqualToString:key]) retVal = NSLocalizedString(key, key);
+    if (!retVal || [retVal isEqualToString:key]) retVal = NSLocalizedStringFromTable(key, tableName, nil);
     return retVal;
 }
 

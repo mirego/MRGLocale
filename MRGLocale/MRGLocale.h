@@ -15,6 +15,7 @@
 + (MRGLocale *)sharedInstance;
 
 - (NSString *)localizedStringForKey:(NSString *)key;
+- (NSString *)localizedStringForKey:(NSString *)key inTable:(NSString *)tableName;
 
 + (NSString *)systemLangIdentifier;
 - (MRGDynamicLocaleRef *)currentLocaleRef;
@@ -28,3 +29,6 @@
 
 #define MRGString(key) \
 [[MRGLocale sharedInstance] localizedStringForKey:(key)]
+
+#define MRGStringFromTable(key, table) \
+[[MRGLocale sharedInstance] localizedStringForKey:(key) inTable:(table)]

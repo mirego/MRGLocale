@@ -20,6 +20,8 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
 @interface MRGLocale ()
 @property (nonatomic) NSArray *localeRefs;
 @property (nonatomic, assign) BOOL hasDynamicLocales;
+
+@property (nonatomic) NSBundle *languageBundle;
 @end
 
 @implementation MRGLocale
@@ -30,6 +32,7 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
     if (self) {
         _hasDynamicLocales = [self archivedDynamicLocaleRefs].count > 0 ? YES : NO;
         _localeRefs = [NSMutableArray arrayWithCapacity:2];
+        _languageBundle = nil;
     }
     return self;
 }
@@ -48,6 +51,12 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
 #pragma mark Public methods
 /////////////////////////////////////////////////////////////////////////////////
 
+- (void)setLanguageBundleWithLanguageISO639Identifier:(NSString *)languageIdentifier
+{
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"Localizable" ofType:@"strings" inDirectory:nil forLocalization:languageIdentifier];
+    _languageBundle = [[NSBundle alloc] initWithPath:[bundlePath stringByDeletingLastPathComponent]];
+}
+
 - (NSString *)localizedStringForKey:(NSString *)key
 {
     return [self localizedStringForKey:key inTable:nil];
@@ -58,7 +67,13 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
     NSParameterAssert(key);
     NSString *retVal = nil;
     if (self.hasDynamicLocales) retVal = [[self dynamicLocalesBundle] localizedStringForKey:key value:nil table:[self defaultLocaleTable]];
-    if (!retVal || [retVal isEqualToString:key]) retVal = NSLocalizedStringFromTable(key, tableName, nil);
+    if (!retVal || [retVal isEqualToString:key]) {
+        if (_languageBundle != nil) {
+            retVal = NSLocalizedStringFromTableInBundle(key, tableName, _languageBundle, nil);
+        } else {
+            retVal = NSLocalizedStringFromTable(key, tableName, nil);
+        }
+    }
     return retVal;
 }
 

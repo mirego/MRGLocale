@@ -17,6 +17,7 @@
 - (NSString *)localizedStringForKey:(NSString *)key;
 - (NSString *)localizedStringForKey:(NSString *)key inTable:(NSString *)tableName;
 
+- (NSString *)getLanguageISO639Identifier;
 - (void)setLanguageBundleWithLanguageISO639Identifier:(NSString *)languageIdentifier;
 
 + (NSString *)systemLangIdentifier;

@@ -1,5 +1,5 @@
 //
-//  MRGDynamicLocalRef.h
+//  MRGRemoteStringFile.h
 //  MRGLocale
 //
 //  Created by Vincent Roy Chevalier on 2014-03-05.
@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MRGRemoteStringResource.h"
 
-@interface MRGDynamicLocaleRef : NSObject <NSCoding>
+@interface MRGRemoteStringFile : NSObject <NSCoding, MRGRemoteStringResource>
 
-@property (nonatomic, readonly) NSString *langIdentifier;
 @property (nonatomic, readonly) NSURL *url;
 
 - (id)init UNAVAILABLE_ATTRIBUTE;
-- (instancetype)initWithLangIdentifier:(NSString *)langIdentifier url:(NSURL *)url;
+- (instancetype)initWithLangIdentifier:(NSString *)languageIdentifier url:(NSURL *)url;
 
 @end

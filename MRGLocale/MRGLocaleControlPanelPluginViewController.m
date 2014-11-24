@@ -10,7 +10,7 @@
 #import "MRGLocaleControlPanelPluginView.h"
 
 #import "MRGLocale.h"
-#import "MRGDynamicLocaleRef.h"
+#import "MRGRemoteStringFile.h"
 
 @interface MRGLocaleControlPanelPluginViewController () <UIAlertViewDelegate>
 @property (nonatomic) MRGLocaleControlPanelPluginView *mainView;
@@ -26,9 +26,9 @@
     if (self) {
         _displayName = MRGString(@"MRGLocale");
         
-//        NSArray *dynamicLocaleRefs = @[[[MRGDynamicLocaleRef alloc] initWithLangIdentifier:@"en" url:[NSURL URLWithString:@"http://vroyc.com/en.strings"]],
-//          [[MRGDynamicLocaleRef alloc] initWithLangIdentifier:@"fr" url:[NSURL URLWithString:@"http://vroyc.com/fr.strings"]]];
-//        [[MRGLocale sharedInstance] setDefaultDynamicLocaleRefs:dynamicLocaleRefs];
+//        NSArray *remoteStringResources = @[[[MRGRemoteStringFile alloc] initWithLangIdentifier:@"en" url:[NSURL URLWithString:@"http://vroyc.com/en.strings"]],
+//          [[MRGRemoteStringFile alloc] initWithLangIdentifier:@"fr" url:[NSURL URLWithString:@"http://vroyc.com/fr.strings"]]];
+//        [[MRGLocale sharedInstance] setDefaultRemoteStringResources:remoteStringResources];
     }
     return self;
 }
@@ -66,7 +66,7 @@
 
 - (void)refreshButtonTouched:(id)sender
 {
-    MRGDynamicLocaleRef *currentLocaleRef = [[MRGLocale sharedInstance] currentLocaleRef];
+    MRGRemoteStringFile *currentLocaleRef = [[MRGLocale sharedInstance] currentRemoteStringResource];
     _refreshAlertView = [[UIAlertView alloc] initWithTitle:MRGString(@"Refresh?") message:MRGString(@"You can also enter a new URL") delegate:self cancelButtonTitle:MRGString(@"Cancel") otherButtonTitles:MRGString(@"Refresh"), nil];
     _refreshAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
     [[_refreshAlertView textFieldAtIndex:0] setText:[currentLocaleRef.url absoluteString]];
@@ -92,13 +92,13 @@
     } else if (alertView == _refreshAlertView && buttonIndex > 0) {
         NSString *urlString = [[alertView textFieldAtIndex:0] text];
         if (urlString) {
-            MRGDynamicLocaleRef *newDynamicLocaleRef = [[MRGDynamicLocaleRef alloc] initWithLangIdentifier:[MRGLocale systemLangIdentifier] url:[NSURL URLWithString:urlString]];
-            [[MRGLocale sharedInstance] addLocaleRef:newDynamicLocaleRef];
+            MRGRemoteStringFile *newRemoteStringFile = [[MRGRemoteStringFile alloc] initWithLangIdentifier:[MRGLocale systemLangIdentifier] url:[NSURL URLWithString:urlString]];
+            [[MRGLocale sharedInstance] addRemoteStringResource:newRemoteStringFile];
             
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
             
             __weak MRGLocaleControlPanelPluginViewController *wself = self;
-            [[MRGLocale sharedInstance] refreshLocalesWithCompletion:^{
+            [[MRGLocale sharedInstance] refreshRemoteStringResourcesWithCompletion:^{
                 [wself.mainView refreshLabel];
                 [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                 exit(0);

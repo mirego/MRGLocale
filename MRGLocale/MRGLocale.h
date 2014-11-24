@@ -8,25 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MRGDynamicLocaleRef.h"
+@class MRGRemoteStringFile;
 
 @interface MRGLocale : NSObject
 
 + (MRGLocale *)sharedInstance;
 
-- (NSString *)localizedStringForKey:(NSString *)key;
-- (NSString *)localizedStringForKey:(NSString *)key inTable:(NSString *)tableName;
+// Language
++ (NSString *)systemLangIdentifier;
 
 - (NSString *)getLanguageISO639Identifier;
 - (void)setLanguageBundleWithLanguageISO639Identifier:(NSString *)languageIdentifier;
 
-+ (NSString *)systemLangIdentifier;
-- (MRGDynamicLocaleRef *)currentLocaleRef;
+// Strings
+- (NSString *)localizedStringForKey:(NSString *)key;
+- (NSString *)localizedStringForKey:(NSString *)key inTable:(NSString *)tableName;
 
-- (void)setDefaultDynamicLocaleRefs:(NSArray *)localeRefs;
-- (void)addLocaleRef:(MRGDynamicLocaleRef *)localeRef;
+// Remote strings
+- (MRGRemoteStringFile *)currentRemoteStringResource;
 
-- (void)refreshLocalesWithCompletion:(void(^)())completion;
+- (void)setDefaultRemoteStringResources:(NSArray *)remoteStringResources;
+- (void)addRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource;
+
+- (void)refreshRemoteStringResourcesWithCompletion:(void(^)())completion;
 
 @end
 

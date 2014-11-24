@@ -7,19 +7,18 @@
 //
 
 #import "MRGLocale.h"
-#import "MRGDynamicLocaleRef.h"
+#import "MRGRemoteStringFile.h"
 
 #import <sys/xattr.h>
 
 
-static NSString *const kMRGLocaleFile = @"Localizable.strings";
-static NSString *const kMRGLocaleFileLangIdentifierKey = @"MRGLocaleLang";
+static NSString *const MRGLocaleFile = @"Localizable.strings";
 
-static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLocalesRefUserDefaultKey";
+static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteStringFileUserDefaultKey";
 
 @interface MRGLocale ()
-@property (nonatomic) NSArray *localeRefs;
-@property (nonatomic, assign) BOOL hasDynamicLocales;
+@property (nonatomic) NSArray *remoteStringResources;
+@property (nonatomic, assign) BOOL hasRemoteStringFiles;
 
 @property (nonatomic) NSBundle *languageBundle;
 @property (nonatomic) NSString *languageIdentifier;
@@ -31,8 +30,8 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
 {
     self = [super init];
     if (self) {
-        _hasDynamicLocales = [self archivedDynamicLocaleRefs].count > 0 ? YES : NO;
-        _localeRefs = [NSMutableArray arrayWithCapacity:2];
+        _hasRemoteStringFiles = [self archivedRemoteStringResources].count > 0 ? YES : NO;
+        _remoteStringResources = [NSMutableArray arrayWithCapacity:2];
         _languageBundle = nil;
         _languageIdentifier = @"";
     }
@@ -49,22 +48,29 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
     return locale;
 }
 
-/////////////////////////////////////////////////////////////////////////////////
-#pragma mark Public methods
-/////////////////////////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------------
+#pragma mark Public language methods
+//------------------------------------------------------------------------------
++ (NSString *)systemLangIdentifier
+{
+    return [[NSLocale preferredLanguages] objectAtIndex:0];
+}
 
 - (void)setLanguageBundleWithLanguageISO639Identifier:(NSString *)languageIdentifier
 {
     NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"Localizable" ofType:@"strings" inDirectory:nil forLocalization:languageIdentifier];
-    _languageIdentifier = languageIdentifier;
-    _languageBundle = [[NSBundle alloc] initWithPath:[bundlePath stringByDeletingLastPathComponent]];
+    self.languageIdentifier = languageIdentifier;
+    self.languageBundle = [[NSBundle alloc] initWithPath:[bundlePath stringByDeletingLastPathComponent]];
 }
 
 - (NSString *)getLanguageISO639Identifier
 {
-    return _languageIdentifier;
+    return self.languageIdentifier;
 }
 
+//------------------------------------------------------------------------------
+#pragma mark Public strings methods
+//------------------------------------------------------------------------------
 - (NSString *)localizedStringForKey:(NSString *)key
 {
     return [self localizedStringForKey:key inTable:nil];
@@ -74,10 +80,10 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
 {
     NSParameterAssert(key);
     NSString *retVal = nil;
-    if (self.hasDynamicLocales) retVal = [[self dynamicLocalesBundle] localizedStringForKey:key value:nil table:[self defaultLocaleTable]];
+    if (self.hasRemoteStringFiles) retVal = [[self remoteStringResourceBundle] localizedStringForKey:key value:nil table:[self defaultLocaleTable]];
     if (!retVal || [retVal isEqualToString:key]) {
-        if (_languageBundle != nil) {
-            retVal = NSLocalizedStringFromTableInBundle(key, tableName, _languageBundle, nil);
+        if (self.languageBundle != nil) {
+            retVal = NSLocalizedStringFromTableInBundle(key, tableName, self.languageBundle, nil);
         } else {
             retVal = NSLocalizedStringFromTable(key, tableName, nil);
         }
@@ -85,71 +91,68 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
     return retVal;
 }
 
-+ (NSString *)systemLangIdentifier
-{
-    return [[NSLocale preferredLanguages] objectAtIndex:0];
-}
-
-- (MRGDynamicLocaleRef *)currentLocaleRef
+//------------------------------------------------------------------------------
+#pragma mark Public remote strings method
+//------------------------------------------------------------------------------
+- (MRGRemoteStringFile *)currentRemoteStringResource
 {
     NSString *systemLangIdentifier = [MRGLocale systemLangIdentifier];
-    MRGDynamicLocaleRef *currentLocaleRef = nil;
-    for (MRGDynamicLocaleRef *ref in _localeRefs) {
-        if ([ref.langIdentifier isEqualToString:systemLangIdentifier]) {
-            currentLocaleRef = ref;
+    MRGRemoteStringFile *currentRemoteStringResource = nil;
+    for (MRGRemoteStringFile *remoteStringResource in self.remoteStringResources) {
+        if ([remoteStringResource.languageIdentifier isEqualToString:systemLangIdentifier]) {
+            currentRemoteStringResource = remoteStringResource;
             break;
         }
     }
-    return currentLocaleRef;
+    return currentRemoteStringResource;
 }
 
-- (void)setDefaultDynamicLocaleRefs:(NSArray *)localeRefs
+- (void)setDefaultRemoteStringResources:(NSArray *)remoteStringResources
 {
-    for (id ref in localeRefs) {
-        if ([ref isKindOfClass:[MRGDynamicLocaleRef class]]) {
-            MRGDynamicLocaleRef *newRef = (MRGDynamicLocaleRef *)ref;
-            MRGDynamicLocaleRef *previousLocaleRef = [self dynamicLocaleRefWithLangIdentifier:newRef.langIdentifier];
-            if (!previousLocaleRef) {
-                [self saveDynamicLocaleRef:newRef];
+    for (id remoteStringResource in remoteStringResources) {
+        if ([remoteStringResource isKindOfClass:[MRGRemoteStringFile class]]) {
+            MRGRemoteStringFile *newRemoteStringResource = (MRGRemoteStringFile *) remoteStringResource;
+            MRGRemoteStringFile *previousRemoteStringResource = [self remoteStringResourceWithLangIdentifier:newRemoteStringResource.languageIdentifier];
+            if (!previousRemoteStringResource) {
+                [self saveRemoteStringResource:newRemoteStringResource];
             }
         }
     }
-    _localeRefs = [self archivedDynamicLocaleRefs];
+    self.remoteStringResources = [self archivedRemoteStringResources];
 }
 
-- (void)addLocaleRef:(MRGDynamicLocaleRef *)localeRef
+- (void)addRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource
 {
-    [self saveDynamicLocaleRef:localeRef];
-    _localeRefs = [self archivedDynamicLocaleRefs];
+    [self saveRemoteStringResource:remoteStringResource];
+    self.remoteStringResources = [self archivedRemoteStringResources];
 }
 
-- (void)refreshLocalesWithCompletion:(void(^)())completion;
+- (void)refreshRemoteStringResourcesWithCompletion:(void(^)())completion;
 {
     __weak MRGLocale *wself = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        for (MRGDynamicLocaleRef *localeRef in wself.localeRefs) {
-            NSData *localeData = [NSData dataWithContentsOfURL:localeRef.url];
-            [wself writeLocaleFileData:localeData withLocaleRef:localeRef];
+        for (MRGRemoteStringFile *remoteStringResource in wself.remoteStringResources) {
+            NSData *localeData = [NSData dataWithContentsOfURL:remoteStringResource.url];
+            [wself writeLocaleFileData:localeData withLocaleRemoteStringResource:remoteStringResource];
         }
         dispatch_sync(dispatch_get_main_queue(), ^{
-            wself.hasDynamicLocales = YES;
+            wself.hasRemoteStringFiles = YES;
             if (completion) completion();
         });
     });
 }
 
-/////////////////////////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------------
 #pragma mark Private methods
-/////////////////////////////////////////////////////////////////////////////////
-
+//------------------------------------------------------------------------------
 - (NSString *)defaultLocaleTable
 {
-    return [kMRGLocaleFile stringByDeletingPathExtension];
+    return [MRGLocaleFile stringByDeletingPathExtension];
 }
 
-- (void)writeLocaleFileData:(NSData *)data withLocaleRef:(MRGDynamicLocaleRef *)ref
+- (void)writeLocaleFileData:(NSData *)data withLocaleRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource
 {
-    NSString *localeFilePath = [self dynamicLocaleFilePathFromRef:ref];
+    NSString *localeFilePath = [self filePathForRemoteStringResource:remoteStringResource];
     if (data) {
         if ([[NSFileManager defaultManager] fileExistsAtPath:localeFilePath]) {
             [[NSFileManager defaultManager] removeItemAtPath:localeFilePath error:nil];
@@ -161,29 +164,29 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
     }
 }
 
-- (NSString *)dynamicLocaleFilePathFromRef:(MRGDynamicLocaleRef *)ref
+- (NSString *)filePathForRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource
 {
-    NSString *localeFilePath = [[self dynamicLocaleDirPathFromRef:ref] stringByAppendingPathComponent:kMRGLocaleFile];
+    NSString *localeFilePath = [[self directoryPathForRemoteStringResource:remoteStringResource] stringByAppendingPathComponent:MRGLocaleFile];
     return localeFilePath;
 }
 
-- (NSString *)dynamicLocaleDirPathFromRef:(MRGDynamicLocaleRef *)ref
+- (NSString *)directoryPathForRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource
 {
-     NSString *localePathComp = [NSString stringWithFormat:@"%@.lproj", ref.langIdentifier];
-    NSString * dirPath = [[self dynamicLocalesBundlePath] stringByAppendingPathComponent:localePathComp];
+     NSString *localePathComp = [NSString stringWithFormat:@"%@.lproj", remoteStringResource.languageIdentifier];
+    NSString * dirPath = [[self remoteStringResourceBundlePath] stringByAppendingPathComponent:localePathComp];
     if (![[NSFileManager defaultManager] fileExistsAtPath:dirPath]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:nil];
     }
     return dirPath;
 }
 
-- (NSBundle *)dynamicLocalesBundle
+- (NSBundle *)remoteStringResourceBundle
 {
-    NSBundle *dynamicLocales = [[NSBundle alloc] initWithPath:[self dynamicLocalesBundlePath]];
-    return dynamicLocales;
+    NSBundle *remoteStringResources = [[NSBundle alloc] initWithPath:[self remoteStringResourceBundlePath]];
+    return remoteStringResources;
 }
 
-- (NSString *)dynamicLocalesBundlePath
+- (NSString *)remoteStringResourceBundlePath
 {
     NSString *applicationSupportDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
     NSString *localesDir = [applicationSupportDir stringByAppendingPathComponent:@"MRGLocale"];
@@ -198,52 +201,52 @@ static NSString *const kDynamicLocalesRefUserDefaultKey = @"MRGLocale:kDynamicLo
 }
 
 
-- (void)saveDynamicLocaleRef:(MRGDynamicLocaleRef *)newRef
+- (void)saveRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource
 {
     NSInteger indexToReplace = NSNotFound;
-    NSMutableArray *dynamicLocaleRefs = [NSMutableArray arrayWithArray:[self archivedDynamicLocaleRefs]];
-    if (!dynamicLocaleRefs) dynamicLocaleRefs = [NSMutableArray arrayWithCapacity:2];
+    NSMutableArray *remoteStringResources = [NSMutableArray arrayWithArray:[self archivedRemoteStringResources]];
+    if (!remoteStringResources) remoteStringResources = [NSMutableArray arrayWithCapacity:2];
     
-    for (NSUInteger c = 0; c < dynamicLocaleRefs.count; c++) {
-        id ref = [dynamicLocaleRefs objectAtIndex:c];
-        if ([ref isKindOfClass:[MRGDynamicLocaleRef class]] && [[(MRGDynamicLocaleRef *)ref langIdentifier] isEqualToString:newRef.langIdentifier]) {
+    for (NSUInteger c = 0; c < remoteStringResources.count; c++) {
+        id indexRemoteStringResource = [remoteStringResources objectAtIndex:c];
+        if ([indexRemoteStringResource isKindOfClass:[MRGRemoteStringFile class]] && [[(MRGRemoteStringFile *) indexRemoteStringResource languageIdentifier] isEqualToString:remoteStringResource.languageIdentifier]) {
             indexToReplace = c;
             break;
         }
     }
     
     if (indexToReplace == NSNotFound) {
-        [dynamicLocaleRefs addObject:newRef];
+        [remoteStringResources addObject:remoteStringResource];
     } else {
-        [dynamicLocaleRefs replaceObjectAtIndex:indexToReplace withObject:newRef];
+        [remoteStringResources replaceObjectAtIndex:indexToReplace withObject:remoteStringResource];
     }
     
-    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:dynamicLocaleRefs] forKey:kDynamicLocalesRefUserDefaultKey];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:remoteStringResources] forKey:RemoteStringFileUserDefaultKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (MRGDynamicLocaleRef *)dynamicLocaleRefWithLangIdentifier:(NSString *)langIdentifier
+- (MRGRemoteStringFile *)remoteStringResourceWithLangIdentifier:(NSString *)langIdentifier
 {
-    MRGDynamicLocaleRef *retVal = nil;
-    NSArray *dynamicLocaleRefs = [self archivedDynamicLocaleRefs];
-    for (id ref in dynamicLocaleRefs) {
-        if ([ref isKindOfClass:[MRGDynamicLocaleRef class]] && [[(MRGDynamicLocaleRef *)ref langIdentifier] isEqualToString:langIdentifier]) {
-            retVal = (MRGDynamicLocaleRef *)ref;
+    MRGRemoteStringFile *retVal = nil;
+    NSArray *remoteStringResources = [self archivedRemoteStringResources];
+    for (id remoteStringResource in remoteStringResources) {
+        if ([remoteStringResource isKindOfClass:[MRGRemoteStringFile class]] && [[(MRGRemoteStringFile *) remoteStringResource languageIdentifier] isEqualToString:langIdentifier]) {
+            retVal = (MRGRemoteStringFile *) remoteStringResource;
             break;
         }
     }
     return retVal;
 }
 
-- (NSArray *)archivedDynamicLocaleRefs
+- (NSArray *)archivedRemoteStringResources
 {
     NSArray *result = nil;
     
     [[NSUserDefaults standardUserDefaults] synchronize];
-    NSData *dynamicLocalesRef = [[NSUserDefaults standardUserDefaults] objectForKey:kDynamicLocalesRefUserDefaultKey];
+    NSData *remoteStringResource = [[NSUserDefaults standardUserDefaults] objectForKey:RemoteStringFileUserDefaultKey];
     
-    if (dynamicLocalesRef != nil) {
-        result = [NSKeyedUnarchiver unarchiveObjectWithData:dynamicLocalesRef];
+    if (remoteStringResource != nil) {
+        result = [NSKeyedUnarchiver unarchiveObjectWithData:remoteStringResource];
     }
     return result;
 }

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class MRGRemoteStringFile;
+@protocol MRGRemoteStringResource;
 
 @interface MRGLocale : NSObject
 
@@ -25,12 +25,9 @@
 - (NSString *)localizedStringForKey:(NSString *)key inTable:(NSString *)tableName;
 
 // Remote strings
-- (MRGRemoteStringFile *)currentRemoteStringResource;
+- (void)setRemoteStringResourceList:(NSArray *)remoteStringResources;
 
-- (void)setDefaultRemoteStringResources:(NSArray *)remoteStringResources;
-- (void)addRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource;
-
-- (void)refreshRemoteStringResourcesWithCompletion:(void(^)())completion;
+- (void)refreshRemoteStringResourcesWithCompletion:(void(^)(NSError *error))completion;
 
 @end
 

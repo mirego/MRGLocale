@@ -5,8 +5,10 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol MRGRemoteStringResource <NSObject, NSCoding>
+@protocol MRGRemoteStringResource <NSObject>
 
 @property (nonatomic, readonly) NSString *languageIdentifier;
+
+- (NSData *)fetchRemoteResource:(NSError **)error;
 
 @end

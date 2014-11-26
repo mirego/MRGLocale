@@ -18,12 +18,15 @@
 		4F151A2D18C90B76000928BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F151A1218C90B76000928BF /* Foundation.framework */; };
 		4F151A2E18C90B76000928BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F151A1618C90B76000928BF /* UIKit.framework */; };
 		4F151A3618C90B76000928BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F151A3418C90B76000928BF /* InfoPlist.strings */; };
-		4F151A3818C90B76000928BF /* MRGLocaleDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F151A3718C90B76000928BF /* MRGLocaleDemoTests.m */; };
+		4F151A3818C90B76000928BF /* MRGLocaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F151A3718C90B76000928BF /* MRGLocaleTests.m */; };
 		4F151A4A18C90F2E000928BF /* MRGRemoteStringFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F151A4318C90F2E000928BF /* MRGRemoteStringFile.m */; };
 		4F151A4B18C90F2E000928BF /* MRGLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F151A4518C90F2E000928BF /* MRGLocale.m */; };
 		4F151A4C18C90F2E000928BF /* MRGLocaleControlPanelPluginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F151A4718C90F2E000928BF /* MRGLocaleControlPanelPluginViewController.m */; };
 		4F151A4D18C90F2E000928BF /* MRGLocaleControlPanelPluginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F151A4918C90F2E000928BF /* MRGLocaleControlPanelPluginView.m */; };
 		5FDC6BF1AF594E2786C4DAEC /* libPods-MRGLocaleDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B72C288921A94216977A3F95 /* libPods-MRGLocaleDemo.a */; };
+		9B9705DFAB8E6822DF276436 /* MRGRemoteStringResourceMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9706DB147D553CC9C9D95C /* MRGRemoteStringResourceMock.m */; };
+		9B9708A9536F270B2099DB56 /* MRGLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F151A4518C90F2E000928BF /* MRGLocale.m */; };
+		9B9709C3D21671DF43E122D3 /* MRGRemoteAccentString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9709D0B3693DA43CB88F0E /* MRGRemoteAccentString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +55,7 @@
 		4F151A2B18C90B76000928BF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4F151A3318C90B76000928BF /* MRGLocaleDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MRGLocaleDemoTests-Info.plist"; sourceTree = "<group>"; };
 		4F151A3518C90B76000928BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4F151A3718C90B76000928BF /* MRGLocaleDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRGLocaleDemoTests.m; sourceTree = "<group>"; };
+		4F151A3718C90B76000928BF /* MRGLocaleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRGLocaleTests.m; sourceTree = "<group>"; };
 		4F151A4218C90F2E000928BF /* MRGRemoteStringFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRGRemoteStringFile.h; sourceTree = "<group>"; };
 		4F151A4318C90F2E000928BF /* MRGRemoteStringFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRGRemoteStringFile.m; sourceTree = "<group>"; };
 		4F151A4418C90F2E000928BF /* MRGLocale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRGLocale.h; sourceTree = "<group>"; };
@@ -62,6 +65,10 @@
 		4F151A4818C90F2E000928BF /* MRGLocaleControlPanelPluginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRGLocaleControlPanelPluginView.h; sourceTree = "<group>"; };
 		4F151A4918C90F2E000928BF /* MRGLocaleControlPanelPluginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRGLocaleControlPanelPluginView.m; sourceTree = "<group>"; };
 		9B9701DA3A498020A46697C8 /* MRGRemoteStringResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRGRemoteStringResource.h; sourceTree = "<group>"; };
+		9B9706DB147D553CC9C9D95C /* MRGRemoteStringResourceMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRGRemoteStringResourceMock.m; sourceTree = "<group>"; };
+		9B9709D0B3693DA43CB88F0E /* MRGRemoteAccentString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRGRemoteAccentString.m; sourceTree = "<group>"; };
+		9B9709F1CE4A0B9EA3F565B6 /* MRGRemoteAccentString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRGRemoteAccentString.h; sourceTree = "<group>"; };
+		9B970DC46D0CF6455FDC0BA3 /* MRGRemoteStringResourceMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRGRemoteStringResourceMock.h; sourceTree = "<group>"; };
 		B72C288921A94216977A3F95 /* libPods-MRGLocaleDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocaleDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8E6908E7714162B338483A /* Pods-MRGLocaleDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemo.xcconfig"; path = "Pods/Pods-MRGLocaleDemo.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,8 +156,10 @@
 		4F151A3118C90B76000928BF /* MRGLocaleDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				4F151A3718C90B76000928BF /* MRGLocaleDemoTests.m */,
+				4F151A3718C90B76000928BF /* MRGLocaleTests.m */,
 				4F151A3218C90B76000928BF /* Supporting Files */,
+				9B9706DB147D553CC9C9D95C /* MRGRemoteStringResourceMock.m */,
+				9B970DC46D0CF6455FDC0BA3 /* MRGRemoteStringResourceMock.h */,
 			);
 			path = MRGLocaleDemoTests;
 			sourceTree = "<group>";
@@ -176,6 +185,8 @@
 				4F151A4818C90F2E000928BF /* MRGLocaleControlPanelPluginView.h */,
 				4F151A4918C90F2E000928BF /* MRGLocaleControlPanelPluginView.m */,
 				9B9701DA3A498020A46697C8 /* MRGRemoteStringResource.h */,
+				9B9709F1CE4A0B9EA3F565B6 /* MRGRemoteAccentString.h */,
+				9B9709D0B3693DA43CB88F0E /* MRGRemoteAccentString.m */,
 			);
 			name = MRGLocale;
 			path = ../MRGLocale;
@@ -318,6 +329,7 @@
 				4F151A4A18C90F2E000928BF /* MRGRemoteStringFile.m in Sources */,
 				4F151A4C18C90F2E000928BF /* MRGLocaleControlPanelPluginViewController.m in Sources */,
 				4F151A2318C90B76000928BF /* MRGAppDelegate.m in Sources */,
+				9B9709C3D21671DF43E122D3 /* MRGRemoteAccentString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +337,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F151A3818C90B76000928BF /* MRGLocaleDemoTests.m in Sources */,
+				4F151A3818C90B76000928BF /* MRGLocaleTests.m in Sources */,
+				9B9708A9536F270B2099DB56 /* MRGLocale.m in Sources */,
+				9B9705DFAB8E6822DF276436 /* MRGRemoteStringResourceMock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,21 +7,19 @@
 //
 
 #import "MRGLocale.h"
-#import "MRGRemoteStringFile.h"
+#import "MRGRemoteStringResource.h"
 
 #import <sys/xattr.h>
 
 
 static NSString *const MRGLocaleFile = @"Localizable.strings";
 
-static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteStringFileUserDefaultKey";
-
 @interface MRGLocale ()
-@property (nonatomic) NSArray *remoteStringResources;
-@property (nonatomic, assign) BOOL hasRemoteStringFiles;
+@property (nonatomic) NSMutableArray *remoteStringResources;
+@property (nonatomic, assign) BOOL hasRemoteStringResources;
 
-@property (nonatomic) NSBundle *languageBundle;
-@property (nonatomic) NSString *languageIdentifier;
+@property (nonatomic) NSBundle *localLanguageBundleOverride;
+@property (nonatomic) NSString *languageIdentifierOverride;
 @end
 
 @implementation MRGLocale
@@ -30,10 +28,10 @@ static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteString
 {
     self = [super init];
     if (self) {
-        _hasRemoteStringFiles = [self archivedRemoteStringResources].count > 0 ? YES : NO;
+        _hasRemoteStringResources = NO;
         _remoteStringResources = [NSMutableArray arrayWithCapacity:2];
-        _languageBundle = nil;
-        _languageIdentifier = @"";
+        _localLanguageBundleOverride = nil;
+        _languageIdentifierOverride = @"";
     }
     return self;
 }
@@ -59,13 +57,13 @@ static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteString
 - (void)setLanguageBundleWithLanguageISO639Identifier:(NSString *)languageIdentifier
 {
     NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"Localizable" ofType:@"strings" inDirectory:nil forLocalization:languageIdentifier];
-    self.languageIdentifier = languageIdentifier;
-    self.languageBundle = [[NSBundle alloc] initWithPath:[bundlePath stringByDeletingLastPathComponent]];
+    self.languageIdentifierOverride = languageIdentifier;
+    self.localLanguageBundleOverride = [[NSBundle alloc] initWithPath:[bundlePath stringByDeletingLastPathComponent]];
 }
 
 - (NSString *)getLanguageISO639Identifier
 {
-    return self.languageIdentifier;
+    return self.languageIdentifierOverride;
 }
 
 //------------------------------------------------------------------------------
@@ -80,10 +78,12 @@ static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteString
 {
     NSParameterAssert(key);
     NSString *retVal = nil;
-    if (self.hasRemoteStringFiles) retVal = [[self remoteStringResourceBundle] localizedStringForKey:key value:nil table:[self defaultLocaleTable]];
+    if (self.hasRemoteStringResources) {
+        retVal = [[self remoteStringResourceBundle] localizedStringForKey:key value:nil table:[self defaultLocaleTable]];
+    }
     if (!retVal || [retVal isEqualToString:key]) {
-        if (self.languageBundle != nil) {
-            retVal = NSLocalizedStringFromTableInBundle(key, tableName, self.languageBundle, nil);
+        if (self.localLanguageBundleOverride != nil) {
+            retVal = NSLocalizedStringFromTableInBundle(key, tableName, self.localLanguageBundleOverride, nil);
         } else {
             retVal = NSLocalizedStringFromTable(key, tableName, nil);
         }
@@ -94,50 +94,46 @@ static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteString
 //------------------------------------------------------------------------------
 #pragma mark Public remote strings method
 //------------------------------------------------------------------------------
-- (MRGRemoteStringFile *)currentRemoteStringResource
+- (void)setRemoteStringResourceList:(NSArray *)remoteStringResources
 {
-    NSString *systemLangIdentifier = [MRGLocale systemLangIdentifier];
-    MRGRemoteStringFile *currentRemoteStringResource = nil;
-    for (MRGRemoteStringFile *remoteStringResource in self.remoteStringResources) {
-        if ([remoteStringResource.languageIdentifier isEqualToString:systemLangIdentifier]) {
-            currentRemoteStringResource = remoteStringResource;
-            break;
-        }
+    for (id<MRGRemoteStringResource> remoteStringResource in remoteStringResources) {
+        [self addRemoteStringResource:remoteStringResource];
     }
-    return currentRemoteStringResource;
+
+    self.hasRemoteStringResources = remoteStringResources.count > 0;
 }
 
-- (void)setDefaultRemoteStringResources:(NSArray *)remoteStringResources
+- (void)refreshRemoteStringResourcesWithCompletion:(void(^)(NSError *error))completion;
 {
-    for (id remoteStringResource in remoteStringResources) {
-        if ([remoteStringResource isKindOfClass:[MRGRemoteStringFile class]]) {
-            MRGRemoteStringFile *newRemoteStringResource = (MRGRemoteStringFile *) remoteStringResource;
-            MRGRemoteStringFile *previousRemoteStringResource = [self remoteStringResourceWithLangIdentifier:newRemoteStringResource.languageIdentifier];
-            if (!previousRemoteStringResource) {
-                [self saveRemoteStringResource:newRemoteStringResource];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSError *error = nil;
+
+        NSMutableSet *requestedLanguages = [NSMutableSet setWithCapacity:2];
+        NSUInteger index = 0;
+        while (!error && index < self.remoteStringResources.count) {
+            id<MRGRemoteStringResource> remoteStringResource = self.remoteStringResources[index];
+            NSData* stringData = [remoteStringResource fetchRemoteResource:&error];
+
+            if (error == nil) {
+                [self writeLocaleFileData:stringData withLocaleRemoteStringResource:remoteStringResource];
+            }
+
+            [requestedLanguages addObject:remoteStringResource.languageIdentifier];
+            index++;
+        }
+
+        NSArray *languagesDirectories = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[self remoteStringResourceBundlePath] error:nil];
+        for (NSString *languageDirectory in languagesDirectories) {
+            NSString* language = [languageDirectory stringByDeletingPathExtension];
+            if (![requestedLanguages containsObject:language]) {
+                [[NSFileManager defaultManager] removeItemAtPath:[self directoryPathForLanguageIdentifier:language] error:nil];
             }
         }
-    }
-    self.remoteStringResources = [self archivedRemoteStringResources];
-}
 
-- (void)addRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource
-{
-    [self saveRemoteStringResource:remoteStringResource];
-    self.remoteStringResources = [self archivedRemoteStringResources];
-}
-
-- (void)refreshRemoteStringResourcesWithCompletion:(void(^)())completion;
-{
-    __weak MRGLocale *wself = self;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        for (MRGRemoteStringFile *remoteStringResource in wself.remoteStringResources) {
-            NSData *localeData = [NSData dataWithContentsOfURL:remoteStringResource.url];
-            [wself writeLocaleFileData:localeData withLocaleRemoteStringResource:remoteStringResource];
-        }
         dispatch_sync(dispatch_get_main_queue(), ^{
-            wself.hasRemoteStringFiles = YES;
-            if (completion) completion();
+            if (completion != nil) {
+                completion(error);
+            }
         });
     });
 }
@@ -150,7 +146,7 @@ static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteString
     return [MRGLocaleFile stringByDeletingPathExtension];
 }
 
-- (void)writeLocaleFileData:(NSData *)data withLocaleRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource
+- (void)writeLocaleFileData:(NSData *)data withLocaleRemoteStringResource:(id<MRGRemoteStringResource>)remoteStringResource
 {
     NSString *localeFilePath = [self filePathForRemoteStringResource:remoteStringResource];
     if (data) {
@@ -158,21 +154,26 @@ static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteString
             [[NSFileManager defaultManager] removeItemAtPath:localeFilePath error:nil];
         }
         [[NSFileManager defaultManager] createFileAtPath:localeFilePath contents:data attributes:nil];
-        
+
     } else if (![[NSFileManager defaultManager] fileExistsAtPath:localeFilePath]) {
         [[NSFileManager defaultManager] createFileAtPath:localeFilePath contents:data attributes:nil];
     }
 }
 
-- (NSString *)filePathForRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource
+- (NSString *)filePathForRemoteStringResource:(id<MRGRemoteStringResource>)remoteStringResource
 {
     NSString *localeFilePath = [[self directoryPathForRemoteStringResource:remoteStringResource] stringByAppendingPathComponent:MRGLocaleFile];
     return localeFilePath;
 }
 
-- (NSString *)directoryPathForRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource
+- (NSString *)directoryPathForRemoteStringResource:(id<MRGRemoteStringResource>)remoteStringResource
 {
-     NSString *localePathComp = [NSString stringWithFormat:@"%@.lproj", remoteStringResource.languageIdentifier];
+    return [self directoryPathForLanguageIdentifier:remoteStringResource.languageIdentifier];
+}
+
+- (NSString *)directoryPathForLanguageIdentifier:(NSString *)languageIdentifier
+{
+    NSString *localePathComp = [NSString stringWithFormat:@"%@.lproj", languageIdentifier];
     NSString * dirPath = [[self remoteStringResourceBundlePath] stringByAppendingPathComponent:localePathComp];
     if (![[NSFileManager defaultManager] fileExistsAtPath:dirPath]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:nil];
@@ -183,6 +184,14 @@ static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteString
 - (NSBundle *)remoteStringResourceBundle
 {
     NSBundle *remoteStringResources = [[NSBundle alloc] initWithPath:[self remoteStringResourceBundlePath]];
+    NSString *languageIdentifierOverride = self.languageIdentifierOverride;
+
+    const BOOL hasLanguageOverride =  languageIdentifierOverride.length > 0;
+    if (hasLanguageOverride) {
+        NSString *bundlePath = [remoteStringResources pathForResource:@"Localizable" ofType:@"strings" inDirectory:nil forLocalization:languageIdentifierOverride];
+        remoteStringResources = [[NSBundle alloc] initWithPath:[bundlePath stringByDeletingLastPathComponent]];
+    }
+
     return remoteStringResources;
 }
 
@@ -200,66 +209,21 @@ static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteString
     return localesDir;
 }
 
-
-- (void)saveRemoteStringResource:(MRGRemoteStringFile *)remoteStringResource
+- (void)addRemoteStringResource:(id<MRGRemoteStringResource>)remoteStringResource
 {
-    NSInteger indexToReplace = NSNotFound;
-    NSMutableArray *remoteStringResources = [NSMutableArray arrayWithArray:[self archivedRemoteStringResources]];
-    if (!remoteStringResources) remoteStringResources = [NSMutableArray arrayWithCapacity:2];
-    
-    for (NSUInteger c = 0; c < remoteStringResources.count; c++) {
-        id indexRemoteStringResource = [remoteStringResources objectAtIndex:c];
-        if ([indexRemoteStringResource isKindOfClass:[MRGRemoteStringFile class]] && [[(MRGRemoteStringFile *) indexRemoteStringResource languageIdentifier] isEqualToString:remoteStringResource.languageIdentifier]) {
-            indexToReplace = c;
-            break;
-        }
-    }
-    
-    if (indexToReplace == NSNotFound) {
-        [remoteStringResources addObject:remoteStringResource];
-    } else {
-        [remoteStringResources replaceObjectAtIndex:indexToReplace withObject:remoteStringResource];
-    }
-    
-    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:remoteStringResources] forKey:RemoteStringFileUserDefaultKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
+    NSAssert([remoteStringResource conformsToProtocol:@protocol(MRGRemoteStringResource)], nil);
 
-- (MRGRemoteStringFile *)remoteStringResourceWithLangIdentifier:(NSString *)langIdentifier
-{
-    MRGRemoteStringFile *retVal = nil;
-    NSArray *remoteStringResources = [self archivedRemoteStringResources];
-    for (id remoteStringResource in remoteStringResources) {
-        if ([remoteStringResource isKindOfClass:[MRGRemoteStringFile class]] && [[(MRGRemoteStringFile *) remoteStringResource languageIdentifier] isEqualToString:langIdentifier]) {
-            retVal = (MRGRemoteStringFile *) remoteStringResource;
-            break;
-        }
-    }
-    return retVal;
+    [self.remoteStringResources addObject:remoteStringResource];
 }
-
-- (NSArray *)archivedRemoteStringResources
-{
-    NSArray *result = nil;
-    
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    NSData *remoteStringResource = [[NSUserDefaults standardUserDefaults] objectForKey:RemoteStringFileUserDefaultKey];
-    
-    if (remoteStringResource != nil) {
-        result = [NSKeyedUnarchiver unarchiveObjectWithData:remoteStringResource];
-    }
-    return result;
-}
-
 
 + (BOOL)addSkipBackupToFileAtPath:(NSString *)path {
     if (!path) return NO;
-    
+
     if (&NSURLIsExcludedFromBackupKey == nil) { // iOS <= 5.0.1
         const char *systemFilePath = [path fileSystemRepresentation];
         const char *attrName = "com.apple.MobileBackup";
         u_int8_t attrValue = 1;
-        
+
         int result = setxattr(systemFilePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
         return (result == 0);
     }

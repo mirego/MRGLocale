@@ -66,10 +66,8 @@
 
 - (void)refreshButtonTouched:(id)sender
 {
-    MRGRemoteStringFile *currentLocaleRef = [[MRGLocale sharedInstance] currentRemoteStringResource];
     _refreshAlertView = [[UIAlertView alloc] initWithTitle:MRGString(@"Refresh?") message:MRGString(@"You can also enter a new URL") delegate:self cancelButtonTitle:MRGString(@"Cancel") otherButtonTitles:MRGString(@"Refresh"), nil];
     _refreshAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [[_refreshAlertView textFieldAtIndex:0] setText:[currentLocaleRef.url absoluteString]];
     [_refreshAlertView show];
 }
 
@@ -92,13 +90,13 @@
     } else if (alertView == _refreshAlertView && buttonIndex > 0) {
         NSString *urlString = [[alertView textFieldAtIndex:0] text];
         if (urlString) {
-            MRGRemoteStringFile *newRemoteStringFile = [[MRGRemoteStringFile alloc] initWithLangIdentifier:[MRGLocale systemLangIdentifier] url:[NSURL URLWithString:urlString]];
-            [[MRGLocale sharedInstance] addRemoteStringResource:newRemoteStringFile];
+            MRGRemoteStringFile *newRemoteStringFile = [[MRGRemoteStringFile alloc] initWithLanguageIdentifier:[MRGLocale systemLangIdentifier] url:[NSURL URLWithString:urlString]];
+            [[MRGLocale sharedInstance] setRemoteStringResourceList:@[newRemoteStringFile]];
             
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
             
             __weak MRGLocaleControlPanelPluginViewController *wself = self;
-            [[MRGLocale sharedInstance] refreshRemoteStringResourcesWithCompletion:^{
+            [[MRGLocale sharedInstance] refreshRemoteStringResourcesWithCompletion:^(NSError *error) {
                 [wself.mainView refreshLabel];
                 [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                 exit(0);

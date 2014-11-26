@@ -7,7 +7,7 @@ target "MRGLocaleDemo" do
   pod 'MRGControlPanel', '~> 0.0.4'
 end
 
-target "MRGLocaleDemoTests" do
+target "MRGLocaleTests" do
 
 end
 

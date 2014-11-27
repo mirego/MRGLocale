@@ -12,7 +12,7 @@
 
 @synthesize languageIdentifier = _languageIdentifier;
 
-- (instancetype)initWithLangIdentifier:(NSString *)languageIdentifier url:(NSURL *)url
+- (instancetype)initWithLanguageIdentifier:(NSString *)languageIdentifier url:(NSURL *)url
 {
     self = [super init];
     if (self) {
@@ -25,24 +25,14 @@
     return self;
 }
 
-///////////////////////////////////////////////////////////////
-#pragma mark NSCoding Protocol
-///////////////////////////////////////////////////////////////
-
-- (void)encodeWithCoder:(NSCoder *)aCoder
+//------------------------------------------------------------------------------
+#pragma mark Public
+//------------------------------------------------------------------------------
+- (NSData *)fetchRemoteResource:(NSError **)error
 {
-    [aCoder encodeObject:_languageIdentifier forKey:@"languageIdentifier"];
-    [aCoder encodeObject:_url forKey:@"url"];
-}
+    NSData *localeData = [NSData dataWithContentsOfURL:self.url options:NSDataReadingUncached error:error];
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super init];
-    if (self) {
-        _languageIdentifier = [aDecoder decodeObjectForKey:@"languageIdentifier"];
-        _url = [aDecoder decodeObjectForKey:@"url"];
-    }
-    return self;
+    return localeData;
 }
 
 @end

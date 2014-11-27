@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "MRGRemoteStringResource.h"
 
-@interface MRGRemoteStringFile : NSObject <NSCoding, MRGRemoteStringResource>
+@interface MRGRemoteStringFile : NSObject <MRGRemoteStringResource>
 
 @property (nonatomic, readonly) NSURL *url;
 
 - (id)init UNAVAILABLE_ATTRIBUTE;
-- (instancetype)initWithLangIdentifier:(NSString *)languageIdentifier url:(NSURL *)url;
+- (instancetype)initWithLanguageIdentifier:(NSString *)languageIdentifier url:(NSURL *)url;
 
 @end

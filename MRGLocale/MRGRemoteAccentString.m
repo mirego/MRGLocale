@@ -37,7 +37,25 @@
     NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest
                                           returningResponse:&response
                                                       error:error];
-    return data;
+    return [self convertResponseData:data];
+}
+
+//------------------------------------------------------------------------------
+#pragma mark Private
+//------------------------------------------------------------------------------
+- (NSData *)convertResponseData:(NSData *)responseData {
+    NSString *stringsResource = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+
+    // Replace %s by %@ (used for Android compatibility)
+    NSError *error;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"%([0-9]+\\$)?s"
+                                                                           options:0
+                                                                             error:&error];
+    NSString *convertedResource = [regex stringByReplacingMatchesInString:stringsResource
+                                                                  options:0
+                                                                    range:NSMakeRange(0, stringsResource.length)
+                                                             withTemplate:@"%$1@"];
+    return [convertedResource dataUsingEncoding:NSUTF8StringEncoding];
 }
 
 @end

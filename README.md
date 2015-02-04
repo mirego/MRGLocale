@@ -62,6 +62,13 @@ MRGRemoteAccentString *accentStringResource = [[MRGRemoteAccentString alloc] ini
 
 If a translation is not available from the remote string resource, `MRGLocale` will fallback to the app bundle's `Localizable.strings`
 
+## Converting an old project to MRGLocale
+In Xcode, use the regular expression feature of find and replace all to convert occurences of `NSLocalizedString` with `MRGString`.
+
+- "find" `NSLocalizedString\(@"([^\)"]*)"([^\)]*)\)` and "replace" with `MRGString(@"$1")` for `NSLocalizedString` occurences
+- "find" `NSLocalizedStringFromTable\(@"([^\)"]*)",( )?@"([^\)"]*)"([^\)]*)\)` and "replace" with `MRGStringFromTable(@"$1", @"$3")` for `NSLocalizedStringFromTable` occurences
+
+*Note that `NSLocalizedStringFromTableInBundle` and `NSLocalizedStringWithDefaultValue` are currently not supported by `MRGLocale`*
 
 ## License
 

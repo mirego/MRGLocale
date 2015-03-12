@@ -1,10 +1,21 @@
 PODS:
-  - MRGControlPanel (0.0.4)
+  - MRGControlPanel (0.0.6)
+  - MRGLocale (0.2.1):
+    - MRGLocale/ControlPanel (= 0.2.1)
+    - MRGLocale/Core (= 0.2.1)
+  - MRGLocale/ControlPanel (0.2.1):
+    - MRGControlPanel (~> 0.0.4)
+  - MRGLocale/Core (0.2.1)
 
 DEPENDENCIES:
-  - MRGControlPanel (~> 0.0.4)
+  - MRGLocale (from `../MRGLocale.podspec`)
+
+EXTERNAL SOURCES:
+  MRGLocale:
+    :path: ../MRGLocale.podspec
 
 SPEC CHECKSUMS:
-  MRGControlPanel: edf68875a2769335e91c03d1a1683b4db394821f
+  MRGControlPanel: b542285e4d81b349bd2da5418d4af220000e7217
+  MRGLocale: 4ca6ef386ce9f179f62e4c2e7cc752537f4ef78f
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.36.0

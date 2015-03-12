@@ -4,8 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MRGRemoteStringResource.h"
-
+#import <MRGRemoteStringResource.h>
 
 @interface MRGRemoteStringResourceMock : NSObject <MRGRemoteStringResource>
 

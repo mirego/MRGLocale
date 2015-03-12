@@ -1,0 +1,40 @@
+{
+  "name": "MRGLocale",
+  "version": "0.2.1",
+  "license": "BSD 3-Clause",
+  "summary": "Easily manage your localizations by adding dynamic (remote) refs to be able to update them without an app update",
+  "homepage": "https://github.com/mirego/MRGLocale",
+  "authors": {
+    "Mirego": "info@mirego.com"
+  },
+  "source": {
+    "git": "https://github.com/mirego/MRGLocale.git",
+    "tag": "0.2.1"
+  },
+  "requires_arc": true,
+  "platforms": {
+    "ios": "5.0"
+  },
+  "default_subspecs": [
+    "Core",
+    "ControlPanel"
+  ],
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "MRGLocale/*.{h,m}"
+    },
+    {
+      "name": "ControlPanel",
+      "platforms": {
+        "ios": "6.0"
+      },
+      "dependencies": {
+        "MRGControlPanel": [
+          "~> 0.0.4"
+        ]
+      },
+      "source_files": "MRGLocale/ControlPanel/*.{h,m}"
+    }
+  ]
+}

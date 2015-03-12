@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "MRGLocale.h"
+#import <MRGLocale.h>
 #import "MRGRemoteStringResourceMock.h"
 
 static NSString *const RemoteStringFileUserDefaultKey = @"MRGLocale:RemoteStringFileUserDefaultKey";

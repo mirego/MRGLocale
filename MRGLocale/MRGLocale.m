@@ -220,14 +220,17 @@ static NSString *const MRGLocaleFile = @"Localizable.strings";
     if (!path) return NO;
 
     if (&NSURLIsExcludedFromBackupKey == nil) { // iOS <= 5.0.1
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunreachable-code"
         const char *systemFilePath = [path fileSystemRepresentation];
+#pragma GCC diagnostic pop
         const char *attrName = "com.apple.MobileBackup";
         u_int8_t attrValue = 1;
 
         int result = setxattr(systemFilePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
         return (result == 0);
-    }
-    else { // iOS >= 5.1
+        
+    } else { // iOS >= 5.1
         NSError *error = nil;
         NSURL *url = [NSURL fileURLWithPath:path];
         [url setResourceValue:@(YES) forKey:NSURLIsExcludedFromBackupKey error:&error];

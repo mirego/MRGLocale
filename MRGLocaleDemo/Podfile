@@ -1,13 +1,10 @@
-# Uncomment this line to define a global platform for your project
-# platform :ios, "6.0"
+source 'https://github.com/CocoaPods/Specs.git'
+source 'git@github.com:mirego/MCPodSpecs.git'
 
-inhibit_all_warnings!
+platform :ios, '6.0'
 
-target "MRGLocaleDemo" do
-  pod 'MRGControlPanel', '~> 0.0.4'
+pod 'MRGLocale', :path => '../MRGLocale.podspec'
+
+# Unit Tests Pods
+target :MRGLocaleDemoTests do
 end
-
-target "MRGLocaleTests" do
-
-end
-

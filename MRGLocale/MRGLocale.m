@@ -219,11 +219,11 @@ static NSString *const MRGLocaleFile = @"Localizable.strings";
 + (BOOL)addSkipBackupToFileAtPath:(NSString *)path {
     if (!path) return NO;
 
-    if (&NSURLIsExcludedFromBackupKey == nil) { // iOS <= 5.0.1
 #pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wtautological-pointer-compare"
 #pragma GCC diagnostic ignored "-Wunreachable-code"
+    if (&NSURLIsExcludedFromBackupKey == nil) { // iOS <= 5.0.1
         const char *systemFilePath = [path fileSystemRepresentation];
-#pragma GCC diagnostic pop
         const char *attrName = "com.apple.MobileBackup";
         u_int8_t attrValue = 1;
 
@@ -236,6 +236,7 @@ static NSString *const MRGLocaleFile = @"Localizable.strings";
         [url setResourceValue:@(YES) forKey:NSURLIsExcludedFromBackupKey error:&error];
         return (error == nil);
     }
+#pragma GCC diagnostic pop
 }
 
 @end

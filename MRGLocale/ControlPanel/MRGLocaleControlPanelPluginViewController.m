@@ -9,8 +9,8 @@
 #import "MRGLocaleControlPanelPluginViewController.h"
 #import "MRGLocaleControlPanelPluginView.h"
 
-#import "MRGLocale.h"
-#import "MRGRemoteStringFile.h"
+#import <MRGLocale.h>
+#import <MRGRemoteStringFile.h>
 
 @interface MRGLocaleControlPanelPluginViewController () <UIAlertViewDelegate>
 @property (nonatomic) MRGLocaleControlPanelPluginView *mainView;

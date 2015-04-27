@@ -7,7 +7,7 @@
 //
 
 #import "MRGLocaleControlPanelPluginView.h"
-#import "MRGLocale.h"
+#import <MRGLocale.h>
 
 @interface MRGLocaleControlPanelPluginView ()
 @property (nonatomic) UILabel *label;

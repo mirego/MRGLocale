@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'ControlPanel' do |sp|
     sp.ios.deployment_target = '6.0'
+    sp.dependency 'MRGLocale/Core'
     sp.dependency 'MRGControlPanel', '~> 0.0.4'
     sp.source_files = 'MRGLocale/ControlPanel/*.{h,m}'
   end

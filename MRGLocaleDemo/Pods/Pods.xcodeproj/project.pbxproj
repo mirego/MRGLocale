@@ -7,581 +7,546 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02E6C58FF4DD88C4A2317486 /* MRGLocaleControlPanelPluginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB30C636F3B52D11444588C /* MRGLocaleControlPanelPluginViewController.m */; };
-		02FCEABF52353D93F405A589 /* MRGControlPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 481DB8A3C98F4373F9F141C6 /* MRGControlPanel.h */; };
-		0A0DBE9E86A0F97C2FFC05E6 /* MRGControlPanelPluginViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF25545E3EE528D3EE7735 /* MRGControlPanelPluginViewCell.m */; };
-		23F6D0E61BB73BCB089869B9 /* MRGLocale.h in Headers */ = {isa = PBXBuildFile; fileRef = 0832C5248B06A56418946E19 /* MRGLocale.h */; };
-		2617F486DF9C32F2BE322DF1 /* MRGRemoteStringResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 81E9F5EB6B56192A535EBF6E /* MRGRemoteStringResource.h */; };
-		262B767D0C8B5926CA469688 /* MRGRemoteStringResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 81E9F5EB6B56192A535EBF6E /* MRGRemoteStringResource.h */; };
-		27DCE84934E0F9024ACED49A /* Pods-MRGControlPanel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E1AF457E0E21D2BFE63B417F /* Pods-MRGControlPanel-dummy.m */; };
-		27EE7550AB4727A6E9E8ECE9 /* MRGLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED52D866596AA247D1610CC /* MRGLocale.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		2825853073D94958745F5105 /* MRGControlPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3921551EA314A00DD20D9C84 /* MRGControlPanel.m */; };
-		35891D4B36F47588F302EB84 /* MRGRemoteStringFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE717693062E0E439C67F89 /* MRGRemoteStringFile.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		39BD38A6B30E28EFB634FAA6 /* MRGLocaleControlPanelPluginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EE027B1385F4AA99F75B6E1D /* MRGLocaleControlPanelPluginViewController.h */; };
-		3A48FDD219646823D666B111 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B368C2DAC5E350615F16C4 /* Pods-dummy.m */; };
-		3A64CA80E9ADD00E06D27ED4 /* MRGRemoteAccentString.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B47A2A5109F306E337D1BC /* MRGRemoteAccentString.h */; };
-		4043124BC25A5D6BD22EAF98 /* MRGRemoteAccentString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A98CA0F3A964A06A0FBDE /* MRGRemoteAccentString.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		40D90AF01A3FC5FD39182086 /* MRGLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED52D866596AA247D1610CC /* MRGLocale.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4A7FF10DC69D1D2F75B40801 /* Pods-MRGLocaleDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EC55B2E2C8A473E897597D /* Pods-MRGLocaleDemoTests-dummy.m */; };
-		508C2E3B0299397D325398F1 /* MRGLocaleControlPanelPluginView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1092343DE623FB10A0DDE8C /* MRGLocaleControlPanelPluginView.m */; };
-		51B9919198E3B31D7AA4CD6E /* MRGControlPanelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 71B38FF87726BF3A8EB06D9E /* MRGControlPanelViewController.h */; };
-		5438D9B2A0C707828BEE7FC8 /* MRGLocaleControlPanelPluginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EE027B1385F4AA99F75B6E1D /* MRGLocaleControlPanelPluginViewController.h */; };
-		5560FAA0ACFFC160FBF41AC4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B99AE93BBF93E396029B244 /* Foundation.framework */; };
-		5A16F2F0AC78B63F1ABE7D8D /* MRGControlPanelPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAEC0BDD6BACD852032E5A6 /* MRGControlPanelPlugin.h */; };
-		60C5A683D56BDC190C15A29E /* Pods-MRGLocaleDemoTests-MRGLocale-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 503B05C6F1FD9752B40F7618 /* Pods-MRGLocaleDemoTests-MRGLocale-dummy.m */; };
-		6E69A84FE994413C6D66FB0D /* MRGLocaleControlPanelPluginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB30C636F3B52D11444588C /* MRGLocaleControlPanelPluginViewController.m */; };
-		77220378443F7F9954EFD29A /* Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0836D51FEDD7B3D9BF05A79 /* Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m */; };
-		7BC96FF3537631E5EA0B7B5D /* Pods-MRGLocale-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E78EE07E303D5AD94303E67B /* Pods-MRGLocale-dummy.m */; };
-		7E3927FBECFD6628492F3ED3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B99AE93BBF93E396029B244 /* Foundation.framework */; };
-		8B20972DBEDA9C0AD99E9081 /* MRGControlPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA081B29BC1E88E73E96F4A /* MRGControlPanelViewController.m */; };
-		8C42A728BE1F6896FD0B42B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B99AE93BBF93E396029B244 /* Foundation.framework */; };
-		8CE8A4ECEF873B1D93E8821C /* MRGControlPanelPluginViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 038D6CC49DCF7D0979450FBC /* MRGControlPanelPluginViewCell.h */; };
-		90210AD5405ED4A9DEDABC68 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B99AE93BBF93E396029B244 /* Foundation.framework */; };
-		9853E5027835E50DCD546403 /* MRGRemoteAccentString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4A98CA0F3A964A06A0FBDE /* MRGRemoteAccentString.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A1532DA570EA36A6A08C87F5 /* MRGControlPanelPluginViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 038D6CC49DCF7D0979450FBC /* MRGControlPanelPluginViewCell.h */; };
-		A838BB332F0B2C7182FC12BA /* MRGRemoteStringFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE717693062E0E439C67F89 /* MRGRemoteStringFile.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A945921537E1E3B1B826218B /* MRGControlPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3921551EA314A00DD20D9C84 /* MRGControlPanel.m */; };
-		B29106AF765491C126E1391B /* MRGControlPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = A67BBFDEB7848456C528737E /* MRGControlPanelController.h */; };
-		B64BA692101579CCAC1B6B80 /* MRGRemoteAccentString.h in Headers */ = {isa = PBXBuildFile; fileRef = F2B47A2A5109F306E337D1BC /* MRGRemoteAccentString.h */; };
-		B94D7502A7089136E349B57A /* MRGRemoteStringFile.h in Headers */ = {isa = PBXBuildFile; fileRef = C326E28437EBCD4AB2033996 /* MRGRemoteStringFile.h */; };
-		BDF89BFF9D4F740EBFC36281 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61633322B58C930815B73C0 /* MessageUI.framework */; };
-		BFA7D19BA723ACE4AA108631 /* MRGControlPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA081B29BC1E88E73E96F4A /* MRGControlPanelViewController.m */; };
-		C7E11CF1525BDE85CE7EBB7D /* MRGLocaleControlPanelPluginView.m in Sources */ = {isa = PBXBuildFile; fileRef = B1092343DE623FB10A0DDE8C /* MRGLocaleControlPanelPluginView.m */; };
-		CBD12AA413DAEB82EB59D7C7 /* MRGLocaleControlPanelPluginView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8377EA51FB4F8409C31FE33A /* MRGLocaleControlPanelPluginView.h */; };
-		D764039F5E2087FF7CBDF601 /* MRGControlPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D88AFB85ED61594C3CE6CB4 /* MRGControlPanelController.m */; };
-		D94FF0DAA105FAE82508FCF9 /* MRGControlPanelPluginViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF25545E3EE528D3EE7735 /* MRGControlPanelPluginViewCell.m */; };
-		E3A7DE5F61DB88D9EA76AAA9 /* MRGControlPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = 481DB8A3C98F4373F9F141C6 /* MRGControlPanel.h */; };
-		E4E587E996217B9338EC9808 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B99AE93BBF93E396029B244 /* Foundation.framework */; };
-		E75B9D0CD3C6D5BA66F33C72 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F61633322B58C930815B73C0 /* MessageUI.framework */; };
-		E8840F94BDEEDA07D05DCC51 /* MRGControlPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = A67BBFDEB7848456C528737E /* MRGControlPanelController.h */; };
-		E97B55A179B31AF1AA8852AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B99AE93BBF93E396029B244 /* Foundation.framework */; };
-		EC3C86957043335B873D5B48 /* MRGLocale.h in Headers */ = {isa = PBXBuildFile; fileRef = 0832C5248B06A56418946E19 /* MRGLocale.h */; };
-		ECCF50713B642F65CA5708FC /* MRGLocaleControlPanelPluginView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8377EA51FB4F8409C31FE33A /* MRGLocaleControlPanelPluginView.h */; };
-		ED54042BAD3C498DF80914B8 /* MRGControlPanelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 71B38FF87726BF3A8EB06D9E /* MRGControlPanelViewController.h */; };
-		EF08B7305A19979AEC8BBB33 /* MRGControlPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D88AFB85ED61594C3CE6CB4 /* MRGControlPanelController.m */; };
-		F5D37576562213A7A725C467 /* MRGRemoteStringFile.h in Headers */ = {isa = PBXBuildFile; fileRef = C326E28437EBCD4AB2033996 /* MRGRemoteStringFile.h */; };
-		FE180087659DA11F8F33F2B6 /* MRGControlPanelPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAEC0BDD6BACD852032E5A6 /* MRGControlPanelPlugin.h */; };
+		0B3F2CBA89BBDD1D138C755E /* MRGControlPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2496A4667D19109852E4F8B /* MRGControlPanelViewController.m */; };
+		0F7597C7845DE2D99C78829B /* MRGRemoteStringResource.h in Headers */ = {isa = PBXBuildFile; fileRef = D021E710B590F523EEFA0A41 /* MRGRemoteStringResource.h */; };
+		10985EBEEDD2A1C6CD231B48 /* MRGLocaleControlPanelPluginView.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D7D115CC13629815FA3BD4 /* MRGLocaleControlPanelPluginView.h */; };
+		147006A3E9A10AB056604B8C /* MRGControlPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9550C603652E5516287BBF11 /* MRGControlPanelController.h */; };
+		17D160E8FF16D4EDF7E04888 /* MRGLocale.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EAE5410C27BB54916FBE4E /* MRGLocale.h */; };
+		17F5B8DDA3148B8E32F1F30A /* Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23623BCC9A18792569A1DC3A /* Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m */; };
+		1D1AFB556E1920431B08ADFB /* MRGRemoteStringFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4AF98C2E631C0C90DC02CD /* MRGRemoteStringFile.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		27F6796139B1D21164072833 /* MRGRemoteAccentString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3490F95EF9A71A7FCFD23444 /* MRGRemoteAccentString.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		376356C1E0D2693A835CCD2B /* MRGControlPanelPluginViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = B15FA4655C2A678AA06291A2 /* MRGControlPanelPluginViewCell.h */; };
+		3F592BCC6534FE4A2DC1BCDA /* MRGRemoteAccentString.h in Headers */ = {isa = PBXBuildFile; fileRef = 941F8FD8346E153114351C23 /* MRGRemoteAccentString.h */; };
+		3F8161E8E6833052CE53EC8E /* MRGControlPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A449DDDD2956A1B51E03776 /* MRGControlPanel.m */; };
+		40768885F14EAD08C460D00E /* MRGLocaleControlPanelPluginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9274D30AD44B667D49253A2B /* MRGLocaleControlPanelPluginViewController.m */; };
+		408D910E1EAFA8699EBABFD5 /* Pods-MRGLocaleDemoTests-MRGLocale-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4613F4452A087AFD6563E9 /* Pods-MRGLocaleDemoTests-MRGLocale-dummy.m */; };
+		48F24925E26ED587D371C81D /* MRGLocaleControlPanelPluginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E01DFF093EB6175AB5E9155 /* MRGLocaleControlPanelPluginView.m */; };
+		49A74ADB69B382991F927C55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5348097B03EE52302B0F6477 /* Foundation.framework */; };
+		50B7A74051357B479163C3AA /* MRGControlPanelPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E72984654D8E7DC6F5B7187 /* MRGControlPanelPlugin.h */; };
+		595C2C80744E153943C5A6AC /* MRGControlPanelPluginViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = B15FA4655C2A678AA06291A2 /* MRGControlPanelPluginViewCell.h */; };
+		59EE860A36850511DB146D63 /* MRGLocale.h in Headers */ = {isa = PBXBuildFile; fileRef = D3EAE5410C27BB54916FBE4E /* MRGLocale.h */; };
+		5BBDC912A0F4525C8FCD516B /* MRGControlPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C66F7D471EFAE76B02A993C /* MRGControlPanelController.m */; };
+		5E1E8EC59508593BF2390DA6 /* MRGLocaleControlPanelPluginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E01DFF093EB6175AB5E9155 /* MRGLocaleControlPanelPluginView.m */; };
+		639ABF36F90F09F1A7BD8407 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5348097B03EE52302B0F6477 /* Foundation.framework */; };
+		6D8DCE9B3077A09ECD70BCF6 /* MRGLocaleControlPanelPluginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 00205493338A089D4CAA1B54 /* MRGLocaleControlPanelPluginViewController.h */; };
+		725378BFE4559E61C0548A40 /* MRGLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A56FC0EB9D89E312F4E1A9 /* MRGLocale.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		72C34CCA9975E6AEA1E24FC5 /* MRGControlPanelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E260DAEB4CB7EAA7B02C9EC /* MRGControlPanelViewController.h */; };
+		788C638BB346C1C428ACE4FC /* MRGControlPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = B36211957674FD25D12C0135 /* MRGControlPanel.h */; };
+		7A5C9057489DCF4325DFCFCA /* MRGRemoteAccentString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3490F95EF9A71A7FCFD23444 /* MRGRemoteAccentString.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7ECC9DFFF65DD3BFAFB2C93C /* MRGRemoteAccentString.h in Headers */ = {isa = PBXBuildFile; fileRef = 941F8FD8346E153114351C23 /* MRGRemoteAccentString.h */; };
+		800080F2B08102354E8FC41E /* MRGLocaleControlPanelPluginView.h in Headers */ = {isa = PBXBuildFile; fileRef = A3D7D115CC13629815FA3BD4 /* MRGLocaleControlPanelPluginView.h */; };
+		8A77F3FF48A36B5CAE8A812C /* Pods-MRGLocaleDemoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F821BDA226F2E9E0072B00C5 /* Pods-MRGLocaleDemoTests-dummy.m */; };
+		90389D78A9C0A6BD47395913 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5348097B03EE52302B0F6477 /* Foundation.framework */; };
+		955371EE04777AA4704DE4E2 /* MRGControlPanelPluginViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48765A7CDA33E73F79F4A027 /* MRGControlPanelPluginViewCell.m */; };
+		95A503C0034025061C36BAAB /* MRGControlPanelPluginViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48765A7CDA33E73F79F4A027 /* MRGControlPanelPluginViewCell.m */; };
+		97EF5208D4DEEE6D4B432F83 /* MRGControlPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2496A4667D19109852E4F8B /* MRGControlPanelViewController.m */; };
+		9872F4ECBAD46AE3BA4F9A89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5348097B03EE52302B0F6477 /* Foundation.framework */; };
+		9F49A91BD257F6CD0FD742AA /* Pods-MRGLocale-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B2A46FAE32601326BE412E /* Pods-MRGLocale-dummy.m */; };
+		A76C02C7C7150BABF60C65D8 /* MRGControlPanelViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E260DAEB4CB7EAA7B02C9EC /* MRGControlPanelViewController.h */; };
+		A8D648D709A8CFBDD7D9D63B /* MRGControlPanelPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E72984654D8E7DC6F5B7187 /* MRGControlPanelPlugin.h */; };
+		B16DE0CC4623FA0DA090A63F /* MRGControlPanel.h in Headers */ = {isa = PBXBuildFile; fileRef = B36211957674FD25D12C0135 /* MRGControlPanel.h */; };
+		B31F59C2C32EE24AF74109A4 /* MRGRemoteStringFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4AF98C2E631C0C90DC02CD /* MRGRemoteStringFile.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B3283BA174F1CF496F2B2F8D /* MRGLocale.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A56FC0EB9D89E312F4E1A9 /* MRGLocale.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B4B787188631BA3FFCEE8865 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981BD532696598D111A9B2CE /* MessageUI.framework */; };
+		BD8DD95B0C53FD2C66874A44 /* MRGLocaleControlPanelPluginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 00205493338A089D4CAA1B54 /* MRGLocaleControlPanelPluginViewController.h */; };
+		BF3CF51D9654A5BDCBBA9410 /* Pods-MRGControlPanel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F9464B530BCE2E67BB8A4E /* Pods-MRGControlPanel-dummy.m */; };
+		C378AA37490862167801B00B /* MRGRemoteStringResource.h in Headers */ = {isa = PBXBuildFile; fileRef = D021E710B590F523EEFA0A41 /* MRGRemoteStringResource.h */; };
+		D0ACBEA17FECC6B0AFA4611D /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 682FE30ED0B38B970B1AC38B /* Pods-dummy.m */; };
+		D121505ED7920510253F7C18 /* MRGControlPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A449DDDD2956A1B51E03776 /* MRGControlPanel.m */; };
+		D6DDF6083B3C419301BBC108 /* MRGControlPanelController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9550C603652E5516287BBF11 /* MRGControlPanelController.h */; };
+		E0FD2FE2B1BB0AAE259C86CD /* MRGRemoteStringFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E91493A5D67B9FF7D0F9A86 /* MRGRemoteStringFile.h */; };
+		E1D086A0ACB143AFB0646B79 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 981BD532696598D111A9B2CE /* MessageUI.framework */; };
+		E89AD389D0ABBA21F98777D8 /* MRGRemoteStringFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E91493A5D67B9FF7D0F9A86 /* MRGRemoteStringFile.h */; };
+		EB63B6BF111AD4007F2CD9FB /* MRGControlPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C66F7D471EFAE76B02A993C /* MRGControlPanelController.m */; };
+		EB71A7346E69D051DB410528 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5348097B03EE52302B0F6477 /* Foundation.framework */; };
+		EC83907EC30ED2668849C817 /* MRGLocaleControlPanelPluginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9274D30AD44B667D49253A2B /* MRGLocaleControlPanelPluginViewController.m */; };
+		F6E686EC638C11471ABE08CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5348097B03EE52302B0F6477 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4136A51F7E0B9CA70B24B8FC /* PBXContainerItemProxy */ = {
+		0643534AC42E9621CB6D234B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CFD56EFE36F3B3739458E4D8 /* Project object */;
+			containerPortal = 5AD0258107B85FD9333D9AEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D34882DB15D14343A6D0D204;
-			remoteInfo = "Pods-MRGControlPanel";
+			remoteGlobalIDString = 62B9E757635DDBFD492E5AD0;
+			remoteInfo = "Pods-MRGLocaleDemoTests-MRGLocale";
 		};
-		45476160B44442D30726BEE7 /* PBXContainerItemProxy */ = {
+		07C1B698DDC725D1416278A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CFD56EFE36F3B3739458E4D8 /* Project object */;
+			containerPortal = 5AD0258107B85FD9333D9AEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7BC0C5BE30EC0F15898EB96E;
+			remoteGlobalIDString = 07EB309E34F0DD602826E459;
 			remoteInfo = "Pods-MRGLocale";
 		};
-		63C4BF9662599C140BB20B03 /* PBXContainerItemProxy */ = {
+		276E5F96981B0944607E05BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CFD56EFE36F3B3739458E4D8 /* Project object */;
+			containerPortal = 5AD0258107B85FD9333D9AEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FDCA8D67C547C16C3997CFF3;
+			remoteGlobalIDString = B95035EEB58A84A9C0F82057;
 			remoteInfo = "Pods-MRGLocaleDemoTests-MRGControlPanel";
 		};
-		887C89D03F4F18A966C8E8DF /* PBXContainerItemProxy */ = {
+		76688C71E1020E58A1CCF95F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CFD56EFE36F3B3739458E4D8 /* Project object */;
+			containerPortal = 5AD0258107B85FD9333D9AEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FDCA8D67C547C16C3997CFF3;
-			remoteInfo = "Pods-MRGLocaleDemoTests-MRGControlPanel";
-		};
-		C8EFBF5BEA3F0E112E437BD6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CFD56EFE36F3B3739458E4D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D34882DB15D14343A6D0D204;
+			remoteGlobalIDString = F4C0B95A783979B733CDE142;
 			remoteInfo = "Pods-MRGControlPanel";
 		};
-		EDA0F9287663DCA4B1444856 /* PBXContainerItemProxy */ = {
+		813FD13F8FB405012BE75D7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = CFD56EFE36F3B3739458E4D8 /* Project object */;
+			containerPortal = 5AD0258107B85FD9333D9AEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 99473F3D7DA7BE09DE96B109;
-			remoteInfo = "Pods-MRGLocaleDemoTests-MRGLocale";
+			remoteGlobalIDString = B95035EEB58A84A9C0F82057;
+			remoteInfo = "Pods-MRGLocaleDemoTests-MRGControlPanel";
+		};
+		82C923165399BD6C17FC8EB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AD0258107B85FD9333D9AEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4C0B95A783979B733CDE142;
+			remoteInfo = "Pods-MRGControlPanel";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0229860D4F4F9B224F72B1C7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		022E4C2A3388B990C295DBDA /* Pods-MRGLocale-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGLocale-Private.xcconfig"; sourceTree = "<group>"; };
-		038D6CC49DCF7D0979450FBC /* MRGControlPanelPluginViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRGControlPanelPluginViewCell.h; path = MRGControlPanel/MRGControlPanelPluginViewCell.h; sourceTree = "<group>"; };
-		0832C5248B06A56418946E19 /* MRGLocale.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGLocale.h; sourceTree = "<group>"; };
-		0A42F3C5D0046D689C7E0E29 /* libPods-MRGLocale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocale.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0ED52D866596AA247D1610CC /* MRGLocale.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGLocale.m; sourceTree = "<group>"; };
-		0EEB6CFD1F464BF4CF00855E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		120DB23E5E74C1028EB7EAA9 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		21A7E86C209FB13384C37188 /* Pods-MRGControlPanel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGControlPanel.xcconfig"; sourceTree = "<group>"; };
-		2915D1AAAD4E86BB4AADBA4D /* libPods-MRGControlPanel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGControlPanel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B7FD87CB13B153AABA38117 /* Pods-MRGLocaleDemoTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRGLocaleDemoTests-environment.h"; sourceTree = "<group>"; };
-		35EF25545E3EE528D3EE7735 /* MRGControlPanelPluginViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MRGControlPanelPluginViewCell.m; path = MRGControlPanel/MRGControlPanelPluginViewCell.m; sourceTree = "<group>"; };
-		3921551EA314A00DD20D9C84 /* MRGControlPanel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MRGControlPanel.m; path = MRGControlPanel/MRGControlPanel.m; sourceTree = "<group>"; };
-		3A546182C85F8FFCA029E965 /* libPods-MRGLocaleDemoTests-MRGLocale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocaleDemoTests-MRGLocale.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AA199D9A3174C79BEB755BE /* Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig"; path = "../Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig"; sourceTree = "<group>"; };
-		3B99AE93BBF93E396029B244 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3BE717693062E0E439C67F89 /* MRGRemoteStringFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGRemoteStringFile.m; sourceTree = "<group>"; };
-		3FCC838C9F00A4BE7DC2E333 /* Pods-MRGLocaleDemoTests-MRGControlPanel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemoTests-MRGControlPanel.xcconfig"; path = "../Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel.xcconfig"; sourceTree = "<group>"; };
-		46E62EBD24C3C62E4B83FC6D /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		481DB8A3C98F4373F9F141C6 /* MRGControlPanel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRGControlPanel.h; path = MRGControlPanel/MRGControlPanel.h; sourceTree = "<group>"; };
-		503B05C6F1FD9752B40F7618 /* Pods-MRGLocaleDemoTests-MRGLocale-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-MRGLocaleDemoTests-MRGLocale-dummy.m"; path = "../Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale-dummy.m"; sourceTree = "<group>"; };
-		5BA53CD485817AC7C4425673 /* Pods-MRGLocale.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGLocale.xcconfig"; sourceTree = "<group>"; };
-		5D88AFB85ED61594C3CE6CB4 /* MRGControlPanelController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MRGControlPanelController.m; path = MRGControlPanel/MRGControlPanelController.m; sourceTree = "<group>"; };
-		64567A740AB725C0DB7F3F85 /* Pods-MRGLocaleDemoTests-MRGLocale.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemoTests-MRGLocale.xcconfig"; path = "../Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale.xcconfig"; sourceTree = "<group>"; };
-		64B368C2DAC5E350615F16C4 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		6B815F883083FB4FCAC75B16 /* Pods-MRGLocaleDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MRGLocaleDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		71B38FF87726BF3A8EB06D9E /* MRGControlPanelViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRGControlPanelViewController.h; path = MRGControlPanel/MRGControlPanelViewController.h; sourceTree = "<group>"; };
-		72E4F64997813A8BD115B909 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		7A4A98CA0F3A964A06A0FBDE /* MRGRemoteAccentString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGRemoteAccentString.m; sourceTree = "<group>"; };
-		81E9F5EB6B56192A535EBF6E /* MRGRemoteStringResource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGRemoteStringResource.h; sourceTree = "<group>"; };
-		8377EA51FB4F8409C31FE33A /* MRGLocaleControlPanelPluginView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGLocaleControlPanelPluginView.h; sourceTree = "<group>"; };
-		90EC55B2E2C8A473E897597D /* Pods-MRGLocaleDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MRGLocaleDemoTests-dummy.m"; sourceTree = "<group>"; };
-		A4B39FCBBA63467F080D4CB2 /* libPods-MRGLocaleDemoTests-MRGControlPanel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocaleDemoTests-MRGControlPanel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A67BBFDEB7848456C528737E /* MRGControlPanelController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRGControlPanelController.h; path = MRGControlPanel/MRGControlPanelController.h; sourceTree = "<group>"; };
-		AC9D2B0C8C6B6C8F2530F11F /* Pods-MRGLocaleDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGLocaleDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AEAEC0BDD6BACD852032E5A6 /* MRGControlPanelPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRGControlPanelPlugin.h; path = MRGControlPanel/MRGControlPanelPlugin.h; sourceTree = "<group>"; };
-		B0836D51FEDD7B3D9BF05A79 /* Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m"; path = "../Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m"; sourceTree = "<group>"; };
-		B1092343DE623FB10A0DDE8C /* MRGLocaleControlPanelPluginView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGLocaleControlPanelPluginView.m; sourceTree = "<group>"; };
-		B24FD8FC4C6E95DAA8D6A107 /* Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch"; path = "../Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch"; sourceTree = "<group>"; };
-		B536C664512CF56A8654127B /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
-		B5657283185157D6F41A39DE /* Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch"; path = "../Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch"; sourceTree = "<group>"; };
-		C2D84145C494AC9D5D5AF8CB /* libPods-MRGLocaleDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocaleDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C326E28437EBCD4AB2033996 /* MRGRemoteStringFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGRemoteStringFile.h; sourceTree = "<group>"; };
-		C646C7141162B2B5633E6D0D /* Pods-MRGLocaleDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MRGLocaleDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C8CF72D51A75652ED39440B9 /* Pods-MRGLocaleDemoTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MRGLocaleDemoTests-resources.sh"; sourceTree = "<group>"; };
-		CDB30C636F3B52D11444588C /* MRGLocaleControlPanelPluginViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGLocaleControlPanelPluginViewController.m; sourceTree = "<group>"; };
-		D16061C665229F54EFB5DBE4 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D37AF8A86E64E38BD4153677 /* Pods-MRGLocale-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRGLocale-prefix.pch"; sourceTree = "<group>"; };
-		D88C607EDCA0C24ED9DD16D6 /* Pods-MRGControlPanel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGControlPanel-Private.xcconfig"; sourceTree = "<group>"; };
-		DAA081B29BC1E88E73E96F4A /* MRGControlPanelViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MRGControlPanelViewController.m; path = MRGControlPanel/MRGControlPanelViewController.m; sourceTree = "<group>"; };
-		E1AF457E0E21D2BFE63B417F /* Pods-MRGControlPanel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MRGControlPanel-dummy.m"; sourceTree = "<group>"; };
-		E78EE07E303D5AD94303E67B /* Pods-MRGLocale-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MRGLocale-dummy.m"; sourceTree = "<group>"; };
-		E83E7DA3887705C24DE9BF20 /* Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig"; path = "../Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig"; sourceTree = "<group>"; };
-		EE027B1385F4AA99F75B6E1D /* MRGLocaleControlPanelPluginViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGLocaleControlPanelPluginViewController.h; sourceTree = "<group>"; };
-		F2B47A2A5109F306E337D1BC /* MRGRemoteAccentString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGRemoteAccentString.h; sourceTree = "<group>"; };
-		F4AEE0D48056919FEB66754E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		F51179D2871C2A3E2439A2E7 /* Pods-MRGControlPanel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRGControlPanel-prefix.pch"; sourceTree = "<group>"; };
-		F61633322B58C930815B73C0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
-		FA8655D726E3B3FC28B37680 /* Pods-MRGLocaleDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGLocaleDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		00205493338A089D4CAA1B54 /* MRGLocaleControlPanelPluginViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGLocaleControlPanelPluginViewController.h; sourceTree = "<group>"; };
+		0C7B08C1A419DD71323A47F2 /* libPods-MRGLocaleDemoTests-MRGLocale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocaleDemoTests-MRGLocale.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		136DAAD430E24F2B8B675FEF /* Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch"; path = "../Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch"; sourceTree = "<group>"; };
+		1BA56E07802D3C97768A163C /* Pods-MRGLocaleDemoTests-MRGControlPanel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemoTests-MRGControlPanel.xcconfig"; path = "../Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel.xcconfig"; sourceTree = "<group>"; };
+		1CB689B165627D9CB1EB06A1 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1E72984654D8E7DC6F5B7187 /* MRGControlPanelPlugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRGControlPanelPlugin.h; path = MRGControlPanel/MRGControlPanelPlugin.h; sourceTree = "<group>"; };
+		23623BCC9A18792569A1DC3A /* Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m"; path = "../Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m"; sourceTree = "<group>"; };
+		25F9464B530BCE2E67BB8A4E /* Pods-MRGControlPanel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MRGControlPanel-dummy.m"; sourceTree = "<group>"; };
+		27A56FC0EB9D89E312F4E1A9 /* MRGLocale.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGLocale.m; sourceTree = "<group>"; };
+		27A81B29EB5329CE1B930BB2 /* Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch"; path = "../Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch"; sourceTree = "<group>"; };
+		2928B60C3D13A7390E75E70D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B7AE95F83C1ACAC01250A4B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		2E01DFF093EB6175AB5E9155 /* MRGLocaleControlPanelPluginView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGLocaleControlPanelPluginView.m; sourceTree = "<group>"; };
+		2E868502E65C45C9D08B2FF2 /* Pods-MRGLocale-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGLocale-Private.xcconfig"; sourceTree = "<group>"; };
+		3490F95EF9A71A7FCFD23444 /* MRGRemoteAccentString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGRemoteAccentString.m; sourceTree = "<group>"; };
+		4328886E96F7159EBE7B8019 /* Pods-MRGLocaleDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MRGLocaleDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		445566B25548ED1EF5C3A18F /* Pods-MRGControlPanel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGControlPanel.xcconfig"; sourceTree = "<group>"; };
+		48765A7CDA33E73F79F4A027 /* MRGControlPanelPluginViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MRGControlPanelPluginViewCell.m; path = MRGControlPanel/MRGControlPanelPluginViewCell.m; sourceTree = "<group>"; };
+		5348097B03EE52302B0F6477 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5E4AF98C2E631C0C90DC02CD /* MRGRemoteStringFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGRemoteStringFile.m; sourceTree = "<group>"; };
+		682FE30ED0B38B970B1AC38B /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		6F963FFE6723DB06567E05AD /* Pods-MRGLocaleDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGLocaleDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		706993CEADA685CF94263D18 /* Pods-MRGLocaleDemoTests-MRGLocale.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemoTests-MRGLocale.xcconfig"; path = "../Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale.xcconfig"; sourceTree = "<group>"; };
+		73FAD9EB650F085873B6CB86 /* libPods-MRGLocaleDemoTests-MRGControlPanel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocaleDemoTests-MRGControlPanel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A449DDDD2956A1B51E03776 /* MRGControlPanel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MRGControlPanel.m; path = MRGControlPanel/MRGControlPanel.m; sourceTree = "<group>"; };
+		7C66F7D471EFAE76B02A993C /* MRGControlPanelController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MRGControlPanelController.m; path = MRGControlPanel/MRGControlPanelController.m; sourceTree = "<group>"; };
+		8624DC545BA7F910BBF2F933 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		8A59A45BAA9522EF831C59AC /* libPods-MRGLocale.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocale.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9274D30AD44B667D49253A2B /* MRGLocaleControlPanelPluginViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MRGLocaleControlPanelPluginViewController.m; sourceTree = "<group>"; };
+		941F8FD8346E153114351C23 /* MRGRemoteAccentString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGRemoteAccentString.h; sourceTree = "<group>"; };
+		9550C603652E5516287BBF11 /* MRGControlPanelController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRGControlPanelController.h; path = MRGControlPanel/MRGControlPanelController.h; sourceTree = "<group>"; };
+		981BD532696598D111A9B2CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		9A788E6289B8F9C2A68DF184 /* Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig"; path = "../Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig"; sourceTree = "<group>"; };
+		9E260DAEB4CB7EAA7B02C9EC /* MRGControlPanelViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRGControlPanelViewController.h; path = MRGControlPanel/MRGControlPanelViewController.h; sourceTree = "<group>"; };
+		9E91493A5D67B9FF7D0F9A86 /* MRGRemoteStringFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGRemoteStringFile.h; sourceTree = "<group>"; };
+		A2496A4667D19109852E4F8B /* MRGControlPanelViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MRGControlPanelViewController.m; path = MRGControlPanel/MRGControlPanelViewController.m; sourceTree = "<group>"; };
+		A3CB0F677F20E080C5DC32CB /* Pods-MRGLocaleDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MRGLocaleDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A3D7D115CC13629815FA3BD4 /* MRGLocaleControlPanelPluginView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGLocaleControlPanelPluginView.h; sourceTree = "<group>"; };
+		A572085A74B1592A52AB9743 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A5C66DE0CC79A70B0160911C /* Pods-MRGLocaleDemoTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRGLocaleDemoTests-environment.h"; sourceTree = "<group>"; };
+		ACC3B50B87A982730FBCD40D /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		AE18A45E93C482D5E67B3F75 /* Pods-MRGControlPanel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGControlPanel-Private.xcconfig"; sourceTree = "<group>"; };
+		B15FA4655C2A678AA06291A2 /* MRGControlPanelPluginViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRGControlPanelPluginViewCell.h; path = MRGControlPanel/MRGControlPanelPluginViewCell.h; sourceTree = "<group>"; };
+		B36211957674FD25D12C0135 /* MRGControlPanel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MRGControlPanel.h; path = MRGControlPanel/MRGControlPanel.h; sourceTree = "<group>"; };
+		B9B2A46FAE32601326BE412E /* Pods-MRGLocale-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MRGLocale-dummy.m"; sourceTree = "<group>"; };
+		BB8D062052F517604FAE6F02 /* Pods-MRGLocale.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGLocale.xcconfig"; sourceTree = "<group>"; };
+		C0128F16778506F736B7C942 /* Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig"; path = "../Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig"; sourceTree = "<group>"; };
+		C338B85378D6D7A7C5080AB0 /* Pods-MRGLocaleDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MRGLocaleDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		C88E4FCF10751BFD10196CC1 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		D021E710B590F523EEFA0A41 /* MRGRemoteStringResource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGRemoteStringResource.h; sourceTree = "<group>"; };
+		D3EAE5410C27BB54916FBE4E /* MRGLocale.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MRGLocale.h; sourceTree = "<group>"; };
+		D76E3524CDEDD59FB390A99B /* libPods-MRGControlPanel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGControlPanel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA25E01B8D9910F22DE3A500 /* libPods-MRGLocaleDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocaleDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE4613F4452A087AFD6563E9 /* Pods-MRGLocaleDemoTests-MRGLocale-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-MRGLocaleDemoTests-MRGLocale-dummy.m"; path = "../Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale-dummy.m"; sourceTree = "<group>"; };
+		E7F67A5D16937D2912ECEDF0 /* Pods-MRGLocale-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRGLocale-prefix.pch"; sourceTree = "<group>"; };
+		EC93CC0A18032314B089AE57 /* Pods-MRGControlPanel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MRGControlPanel-prefix.pch"; sourceTree = "<group>"; };
+		EEE9E7702CDB83E7C922F4B5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		F61A3CE3138001EA7B62CFDF /* Pods-MRGLocaleDemoTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MRGLocaleDemoTests-resources.sh"; sourceTree = "<group>"; };
+		F821BDA226F2E9E0072B00C5 /* Pods-MRGLocaleDemoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MRGLocaleDemoTests-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		40B36A59CE83C066DADB82BE /* Frameworks */ = {
+		31D03D951DC5B278D308B40D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5560FAA0ACFFC160FBF41AC4 /* Foundation.framework in Frameworks */,
-				E75B9D0CD3C6D5BA66F33C72 /* MessageUI.framework in Frameworks */,
+				F6E686EC638C11471ABE08CC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88C1CA990506B9009A416A81 /* Frameworks */ = {
+		3C779D363AF475AD38E98533 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C42A728BE1F6896FD0B42B8 /* Foundation.framework in Frameworks */,
+				639ABF36F90F09F1A7BD8407 /* Foundation.framework in Frameworks */,
+				E1D086A0ACB143AFB0646B79 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F2463F46182226877D84CEE /* Frameworks */ = {
+		500EEAA830218886CD5A0211 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4E587E996217B9338EC9808 /* Foundation.framework in Frameworks */,
+				EB71A7346E69D051DB410528 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F7AD68306110F9F152B61FB /* Frameworks */ = {
+		6313D309F193A9D43F0A1035 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E3927FBECFD6628492F3ED3 /* Foundation.framework in Frameworks */,
-				BDF89BFF9D4F740EBFC36281 /* MessageUI.framework in Frameworks */,
+				49A74ADB69B382991F927C55 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0AC0C6CF83F0525DBABF36F /* Frameworks */ = {
+		6C982C49BBAD2F34E3CD2C7D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E97B55A179B31AF1AA8852AD /* Foundation.framework in Frameworks */,
+				90389D78A9C0A6BD47395913 /* Foundation.framework in Frameworks */,
+				B4B787188631BA3FFCEE8865 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9DA7E060EC125A2A094F437 /* Frameworks */ = {
+		F77EC159E3507BE6F690A030 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90210AD5405ED4A9DEDABC68 /* Foundation.framework in Frameworks */,
+				9872F4ECBAD46AE3BA4F9A89 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D9105B7CDDFDA67DEA41E91 /* Pods */ = {
+		0DD2A21E065244F9E3C47A23 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DCB001AB77F2AB85A1F906B0 /* MRGControlPanel */,
+				2B9514FC07A33AABB8317A5F /* MRGLocale */,
 			);
-			name = Pods;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		14047D83D50CCA1025E93F4B /* ControlPanel */ = {
+		28F3363DEA3EECD2B54C0D6D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FF82B03C5601EDF3201D92CE /* MRGLocale */,
-			);
-			name = ControlPanel;
-			sourceTree = "<group>";
-		};
-		19E7BEE52F9C2D4F6C2EB6E7 = {
-			isa = PBXGroup;
-			children = (
-				46E62EBD24C3C62E4B83FC6D /* Podfile */,
-				CCBC6FD6B496B352156307F1 /* Development Pods */,
-				E5117BD84FD4BC9E176F69FD /* Frameworks */,
-				0D9105B7CDDFDA67DEA41E91 /* Pods */,
-				4FB14C88526CE8F99BD33BC6 /* Products */,
-				64712BCAC5A154E8EBD45E54 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		4FB14C88526CE8F99BD33BC6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0229860D4F4F9B224F72B1C7 /* libPods.a */,
-				2915D1AAAD4E86BB4AADBA4D /* libPods-MRGControlPanel.a */,
-				0A42F3C5D0046D689C7E0E29 /* libPods-MRGLocale.a */,
-				C2D84145C494AC9D5D5AF8CB /* libPods-MRGLocaleDemoTests.a */,
-				A4B39FCBBA63467F080D4CB2 /* libPods-MRGLocaleDemoTests-MRGControlPanel.a */,
-				3A546182C85F8FFCA029E965 /* libPods-MRGLocaleDemoTests-MRGLocale.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		544DD07B9EA3C3E25A9B527B /* ControlPanel */ = {
-			isa = PBXGroup;
-			children = (
-				8377EA51FB4F8409C31FE33A /* MRGLocaleControlPanelPluginView.h */,
-				B1092343DE623FB10A0DDE8C /* MRGLocaleControlPanelPluginView.m */,
-				EE027B1385F4AA99F75B6E1D /* MRGLocaleControlPanelPluginViewController.h */,
-				CDB30C636F3B52D11444588C /* MRGLocaleControlPanelPluginViewController.m */,
-			);
-			path = ControlPanel;
-			sourceTree = "<group>";
-		};
-		64712BCAC5A154E8EBD45E54 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B815AE87D8D17BF03A1A650D /* Pods */,
-				DF780D21BE05AC47097EDF07 /* Pods-MRGLocaleDemoTests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		6A42A76455622CD560873D57 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5BA53CD485817AC7C4425673 /* Pods-MRGLocale.xcconfig */,
-				022E4C2A3388B990C295DBDA /* Pods-MRGLocale-Private.xcconfig */,
-				E78EE07E303D5AD94303E67B /* Pods-MRGLocale-dummy.m */,
-				D37AF8A86E64E38BD4153677 /* Pods-MRGLocale-prefix.pch */,
-				64567A740AB725C0DB7F3F85 /* Pods-MRGLocaleDemoTests-MRGLocale.xcconfig */,
-				3AA199D9A3174C79BEB755BE /* Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig */,
-				503B05C6F1FD9752B40F7618 /* Pods-MRGLocaleDemoTests-MRGLocale-dummy.m */,
-				B5657283185157D6F41A39DE /* Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch */,
+				BB8D062052F517604FAE6F02 /* Pods-MRGLocale.xcconfig */,
+				2E868502E65C45C9D08B2FF2 /* Pods-MRGLocale-Private.xcconfig */,
+				B9B2A46FAE32601326BE412E /* Pods-MRGLocale-dummy.m */,
+				E7F67A5D16937D2912ECEDF0 /* Pods-MRGLocale-prefix.pch */,
+				706993CEADA685CF94263D18 /* Pods-MRGLocaleDemoTests-MRGLocale.xcconfig */,
+				C0128F16778506F736B7C942 /* Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig */,
+				DE4613F4452A087AFD6563E9 /* Pods-MRGLocaleDemoTests-MRGLocale-dummy.m */,
+				27A81B29EB5329CE1B930BB2 /* Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "MRGLocaleDemo/Pods/Target Support Files/Pods-MRGLocale";
 			sourceTree = "<group>";
 		};
-		6C87C309BA51EFF54EF82CF0 /* Support Files */ = {
+		2B9514FC07A33AABB8317A5F /* MRGLocale */ = {
 			isa = PBXGroup;
 			children = (
-				21A7E86C209FB13384C37188 /* Pods-MRGControlPanel.xcconfig */,
-				D88C607EDCA0C24ED9DD16D6 /* Pods-MRGControlPanel-Private.xcconfig */,
-				E1AF457E0E21D2BFE63B417F /* Pods-MRGControlPanel-dummy.m */,
-				F51179D2871C2A3E2439A2E7 /* Pods-MRGControlPanel-prefix.pch */,
-				3FCC838C9F00A4BE7DC2E333 /* Pods-MRGLocaleDemoTests-MRGControlPanel.xcconfig */,
-				E83E7DA3887705C24DE9BF20 /* Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig */,
-				B0836D51FEDD7B3D9BF05A79 /* Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m */,
-				B24FD8FC4C6E95DAA8D6A107 /* Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Pods-MRGControlPanel";
-			sourceTree = "<group>";
-		};
-		6DDFC605A348AC25AA3F3842 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				E05EC155456F54027208B951 /* MRGLocale */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		7274B1B5C1C523669855358A /* MRGLocale */ = {
-			isa = PBXGroup;
-			children = (
-				14047D83D50CCA1025E93F4B /* ControlPanel */,
-				6DDFC605A348AC25AA3F3842 /* Core */,
-				6A42A76455622CD560873D57 /* Support Files */,
+				B6F81D112B436A6A78B31B7A /* ControlPanel */,
+				CD24B2ED41E48FADB85FD516 /* Core */,
+				28F3363DEA3EECD2B54C0D6D /* Support Files */,
 			);
 			name = MRGLocale;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		B815AE87D8D17BF03A1A650D /* Pods */ = {
+		4AC3AAA8AF5DBC999885E87C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D16061C665229F54EFB5DBE4 /* Pods-acknowledgements.markdown */,
-				72E4F64997813A8BD115B909 /* Pods-acknowledgements.plist */,
-				64B368C2DAC5E350615F16C4 /* Pods-dummy.m */,
-				B536C664512CF56A8654127B /* Pods-environment.h */,
-				120DB23E5E74C1028EB7EAA9 /* Pods-resources.sh */,
-				0EEB6CFD1F464BF4CF00855E /* Pods.debug.xcconfig */,
-				F4AEE0D48056919FEB66754E /* Pods.release.xcconfig */,
+				99493BEA391D4F126170A689 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		534CDA92DA62C73BF27B44A3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E82386C3FBFC0015E134D909 /* Pods */,
+				F444ACF076893866F53001FD /* Pods-MRGLocaleDemoTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5DFDECBD44AFEC90E5D595EE /* MRGControlPanel */ = {
+			isa = PBXGroup;
+			children = (
+				B36211957674FD25D12C0135 /* MRGControlPanel.h */,
+				7A449DDDD2956A1B51E03776 /* MRGControlPanel.m */,
+				9550C603652E5516287BBF11 /* MRGControlPanelController.h */,
+				7C66F7D471EFAE76B02A993C /* MRGControlPanelController.m */,
+				1E72984654D8E7DC6F5B7187 /* MRGControlPanelPlugin.h */,
+				B15FA4655C2A678AA06291A2 /* MRGControlPanelPluginViewCell.h */,
+				48765A7CDA33E73F79F4A027 /* MRGControlPanelPluginViewCell.m */,
+				9E260DAEB4CB7EAA7B02C9EC /* MRGControlPanelViewController.h */,
+				A2496A4667D19109852E4F8B /* MRGControlPanelViewController.m */,
+				F83A3F2646380ACE33F594D9 /* Support Files */,
+			);
+			path = MRGControlPanel;
+			sourceTree = "<group>";
+		};
+		7524AD6EF79F9948B69EC16C = {
+			isa = PBXGroup;
+			children = (
+				1CB689B165627D9CB1EB06A1 /* Podfile */,
+				0DD2A21E065244F9E3C47A23 /* Development Pods */,
+				4AC3AAA8AF5DBC999885E87C /* Frameworks */,
+				D86543321117E3E016D96CD1 /* Pods */,
+				C71EE326401DFBEB14793F57 /* Products */,
+				534CDA92DA62C73BF27B44A3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		99493BEA391D4F126170A689 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5348097B03EE52302B0F6477 /* Foundation.framework */,
+				981BD532696598D111A9B2CE /* MessageUI.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B6F81D112B436A6A78B31B7A /* ControlPanel */ = {
+			isa = PBXGroup;
+			children = (
+				D9401E1F587BDCBBADDC83A0 /* MRGLocale */,
+			);
+			name = ControlPanel;
+			sourceTree = "<group>";
+		};
+		B832B4E7D9AE192B40C7A7BB /* ControlPanel */ = {
+			isa = PBXGroup;
+			children = (
+				A3D7D115CC13629815FA3BD4 /* MRGLocaleControlPanelPluginView.h */,
+				2E01DFF093EB6175AB5E9155 /* MRGLocaleControlPanelPluginView.m */,
+				00205493338A089D4CAA1B54 /* MRGLocaleControlPanelPluginViewController.h */,
+				9274D30AD44B667D49253A2B /* MRGLocaleControlPanelPluginViewController.m */,
+			);
+			path = ControlPanel;
+			sourceTree = "<group>";
+		};
+		BE8A972DB8D165951C60CEF2 /* MRGLocale */ = {
+			isa = PBXGroup;
+			children = (
+				D3EAE5410C27BB54916FBE4E /* MRGLocale.h */,
+				27A56FC0EB9D89E312F4E1A9 /* MRGLocale.m */,
+				941F8FD8346E153114351C23 /* MRGRemoteAccentString.h */,
+				3490F95EF9A71A7FCFD23444 /* MRGRemoteAccentString.m */,
+				9E91493A5D67B9FF7D0F9A86 /* MRGRemoteStringFile.h */,
+				5E4AF98C2E631C0C90DC02CD /* MRGRemoteStringFile.m */,
+				D021E710B590F523EEFA0A41 /* MRGRemoteStringResource.h */,
+			);
+			path = MRGLocale;
+			sourceTree = "<group>";
+		};
+		C71EE326401DFBEB14793F57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2928B60C3D13A7390E75E70D /* libPods.a */,
+				D76E3524CDEDD59FB390A99B /* libPods-MRGControlPanel.a */,
+				8A59A45BAA9522EF831C59AC /* libPods-MRGLocale.a */,
+				DA25E01B8D9910F22DE3A500 /* libPods-MRGLocaleDemoTests.a */,
+				73FAD9EB650F085873B6CB86 /* libPods-MRGLocaleDemoTests-MRGControlPanel.a */,
+				0C7B08C1A419DD71323A47F2 /* libPods-MRGLocaleDemoTests-MRGLocale.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD24B2ED41E48FADB85FD516 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BE8A972DB8D165951C60CEF2 /* MRGLocale */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		D86543321117E3E016D96CD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DFDECBD44AFEC90E5D595EE /* MRGControlPanel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D9401E1F587BDCBBADDC83A0 /* MRGLocale */ = {
+			isa = PBXGroup;
+			children = (
+				B832B4E7D9AE192B40C7A7BB /* ControlPanel */,
+			);
+			path = MRGLocale;
+			sourceTree = "<group>";
+		};
+		E82386C3FBFC0015E134D909 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A572085A74B1592A52AB9743 /* Pods-acknowledgements.markdown */,
+				ACC3B50B87A982730FBCD40D /* Pods-acknowledgements.plist */,
+				682FE30ED0B38B970B1AC38B /* Pods-dummy.m */,
+				C88E4FCF10751BFD10196CC1 /* Pods-environment.h */,
+				8624DC545BA7F910BBF2F933 /* Pods-resources.sh */,
+				2B7AE95F83C1ACAC01250A4B /* Pods.debug.xcconfig */,
+				EEE9E7702CDB83E7C922F4B5 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		CCBC6FD6B496B352156307F1 /* Development Pods */ = {
+		F444ACF076893866F53001FD /* Pods-MRGLocaleDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				7274B1B5C1C523669855358A /* MRGLocale */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		D8AA4D01D20130488E94082A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3B99AE93BBF93E396029B244 /* Foundation.framework */,
-				F61633322B58C930815B73C0 /* MessageUI.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		DCB001AB77F2AB85A1F906B0 /* MRGControlPanel */ = {
-			isa = PBXGroup;
-			children = (
-				481DB8A3C98F4373F9F141C6 /* MRGControlPanel.h */,
-				3921551EA314A00DD20D9C84 /* MRGControlPanel.m */,
-				A67BBFDEB7848456C528737E /* MRGControlPanelController.h */,
-				5D88AFB85ED61594C3CE6CB4 /* MRGControlPanelController.m */,
-				AEAEC0BDD6BACD852032E5A6 /* MRGControlPanelPlugin.h */,
-				038D6CC49DCF7D0979450FBC /* MRGControlPanelPluginViewCell.h */,
-				35EF25545E3EE528D3EE7735 /* MRGControlPanelPluginViewCell.m */,
-				71B38FF87726BF3A8EB06D9E /* MRGControlPanelViewController.h */,
-				DAA081B29BC1E88E73E96F4A /* MRGControlPanelViewController.m */,
-				6C87C309BA51EFF54EF82CF0 /* Support Files */,
-			);
-			path = MRGControlPanel;
-			sourceTree = "<group>";
-		};
-		DF780D21BE05AC47097EDF07 /* Pods-MRGLocaleDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				C646C7141162B2B5633E6D0D /* Pods-MRGLocaleDemoTests-acknowledgements.markdown */,
-				6B815F883083FB4FCAC75B16 /* Pods-MRGLocaleDemoTests-acknowledgements.plist */,
-				90EC55B2E2C8A473E897597D /* Pods-MRGLocaleDemoTests-dummy.m */,
-				2B7FD87CB13B153AABA38117 /* Pods-MRGLocaleDemoTests-environment.h */,
-				C8CF72D51A75652ED39440B9 /* Pods-MRGLocaleDemoTests-resources.sh */,
-				AC9D2B0C8C6B6C8F2530F11F /* Pods-MRGLocaleDemoTests.debug.xcconfig */,
-				FA8655D726E3B3FC28B37680 /* Pods-MRGLocaleDemoTests.release.xcconfig */,
+				4328886E96F7159EBE7B8019 /* Pods-MRGLocaleDemoTests-acknowledgements.markdown */,
+				A3CB0F677F20E080C5DC32CB /* Pods-MRGLocaleDemoTests-acknowledgements.plist */,
+				F821BDA226F2E9E0072B00C5 /* Pods-MRGLocaleDemoTests-dummy.m */,
+				A5C66DE0CC79A70B0160911C /* Pods-MRGLocaleDemoTests-environment.h */,
+				F61A3CE3138001EA7B62CFDF /* Pods-MRGLocaleDemoTests-resources.sh */,
+				6F963FFE6723DB06567E05AD /* Pods-MRGLocaleDemoTests.debug.xcconfig */,
+				C338B85378D6D7A7C5080AB0 /* Pods-MRGLocaleDemoTests.release.xcconfig */,
 			);
 			name = "Pods-MRGLocaleDemoTests";
 			path = "Target Support Files/Pods-MRGLocaleDemoTests";
 			sourceTree = "<group>";
 		};
-		E05EC155456F54027208B951 /* MRGLocale */ = {
+		F83A3F2646380ACE33F594D9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0832C5248B06A56418946E19 /* MRGLocale.h */,
-				0ED52D866596AA247D1610CC /* MRGLocale.m */,
-				F2B47A2A5109F306E337D1BC /* MRGRemoteAccentString.h */,
-				7A4A98CA0F3A964A06A0FBDE /* MRGRemoteAccentString.m */,
-				C326E28437EBCD4AB2033996 /* MRGRemoteStringFile.h */,
-				3BE717693062E0E439C67F89 /* MRGRemoteStringFile.m */,
-				81E9F5EB6B56192A535EBF6E /* MRGRemoteStringResource.h */,
+				445566B25548ED1EF5C3A18F /* Pods-MRGControlPanel.xcconfig */,
+				AE18A45E93C482D5E67B3F75 /* Pods-MRGControlPanel-Private.xcconfig */,
+				25F9464B530BCE2E67BB8A4E /* Pods-MRGControlPanel-dummy.m */,
+				EC93CC0A18032314B089AE57 /* Pods-MRGControlPanel-prefix.pch */,
+				1BA56E07802D3C97768A163C /* Pods-MRGLocaleDemoTests-MRGControlPanel.xcconfig */,
+				9A788E6289B8F9C2A68DF184 /* Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig */,
+				23623BCC9A18792569A1DC3A /* Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m */,
+				136DAAD430E24F2B8B675FEF /* Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch */,
 			);
-			path = MRGLocale;
-			sourceTree = "<group>";
-		};
-		E5117BD84FD4BC9E176F69FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D8AA4D01D20130488E94082A /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FF82B03C5601EDF3201D92CE /* MRGLocale */ = {
-			isa = PBXGroup;
-			children = (
-				544DD07B9EA3C3E25A9B527B /* ControlPanel */,
-			);
-			path = MRGLocale;
+			name = "Support Files";
+			path = "../Target Support Files/Pods-MRGControlPanel";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		35A9AD4ADD44A74CDA493C93 /* Headers */ = {
+		15F42385D94D12BF64DC9389 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC3C86957043335B873D5B48 /* MRGLocale.h in Headers */,
-				CBD12AA413DAEB82EB59D7C7 /* MRGLocaleControlPanelPluginView.h in Headers */,
-				5438D9B2A0C707828BEE7FC8 /* MRGLocaleControlPanelPluginViewController.h in Headers */,
-				B64BA692101579CCAC1B6B80 /* MRGRemoteAccentString.h in Headers */,
-				B94D7502A7089136E349B57A /* MRGRemoteStringFile.h in Headers */,
-				2617F486DF9C32F2BE322DF1 /* MRGRemoteStringResource.h in Headers */,
+				788C638BB346C1C428ACE4FC /* MRGControlPanel.h in Headers */,
+				147006A3E9A10AB056604B8C /* MRGControlPanelController.h in Headers */,
+				A8D648D709A8CFBDD7D9D63B /* MRGControlPanelPlugin.h in Headers */,
+				376356C1E0D2693A835CCD2B /* MRGControlPanelPluginViewCell.h in Headers */,
+				72C34CCA9975E6AEA1E24FC5 /* MRGControlPanelViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68EE431142C3ACB033FC9257 /* Headers */ = {
+		2CE6A892572D1583FFB33D72 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02FCEABF52353D93F405A589 /* MRGControlPanel.h in Headers */,
-				E8840F94BDEEDA07D05DCC51 /* MRGControlPanelController.h in Headers */,
-				FE180087659DA11F8F33F2B6 /* MRGControlPanelPlugin.h in Headers */,
-				A1532DA570EA36A6A08C87F5 /* MRGControlPanelPluginViewCell.h in Headers */,
-				51B9919198E3B31D7AA4CD6E /* MRGControlPanelViewController.h in Headers */,
+				B16DE0CC4623FA0DA090A63F /* MRGControlPanel.h in Headers */,
+				D6DDF6083B3C419301BBC108 /* MRGControlPanelController.h in Headers */,
+				50B7A74051357B479163C3AA /* MRGControlPanelPlugin.h in Headers */,
+				595C2C80744E153943C5A6AC /* MRGControlPanelPluginViewCell.h in Headers */,
+				A76C02C7C7150BABF60C65D8 /* MRGControlPanelViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81F3424F1337239320AFD15F /* Headers */ = {
+		58ABAA46631844D9ED996FAF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3A7DE5F61DB88D9EA76AAA9 /* MRGControlPanel.h in Headers */,
-				B29106AF765491C126E1391B /* MRGControlPanelController.h in Headers */,
-				5A16F2F0AC78B63F1ABE7D8D /* MRGControlPanelPlugin.h in Headers */,
-				8CE8A4ECEF873B1D93E8821C /* MRGControlPanelPluginViewCell.h in Headers */,
-				ED54042BAD3C498DF80914B8 /* MRGControlPanelViewController.h in Headers */,
+				17D160E8FF16D4EDF7E04888 /* MRGLocale.h in Headers */,
+				800080F2B08102354E8FC41E /* MRGLocaleControlPanelPluginView.h in Headers */,
+				BD8DD95B0C53FD2C66874A44 /* MRGLocaleControlPanelPluginViewController.h in Headers */,
+				7ECC9DFFF65DD3BFAFB2C93C /* MRGRemoteAccentString.h in Headers */,
+				E89AD389D0ABBA21F98777D8 /* MRGRemoteStringFile.h in Headers */,
+				0F7597C7845DE2D99C78829B /* MRGRemoteStringResource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE96A2E3C0A868C84C0C4AF6 /* Headers */ = {
+		6E5939CEF861B927300AC883 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23F6D0E61BB73BCB089869B9 /* MRGLocale.h in Headers */,
-				ECCF50713B642F65CA5708FC /* MRGLocaleControlPanelPluginView.h in Headers */,
-				39BD38A6B30E28EFB634FAA6 /* MRGLocaleControlPanelPluginViewController.h in Headers */,
-				3A64CA80E9ADD00E06D27ED4 /* MRGRemoteAccentString.h in Headers */,
-				F5D37576562213A7A725C467 /* MRGRemoteStringFile.h in Headers */,
-				262B767D0C8B5926CA469688 /* MRGRemoteStringResource.h in Headers */,
+				59EE860A36850511DB146D63 /* MRGLocale.h in Headers */,
+				10985EBEEDD2A1C6CD231B48 /* MRGLocaleControlPanelPluginView.h in Headers */,
+				6D8DCE9B3077A09ECD70BCF6 /* MRGLocaleControlPanelPluginViewController.h in Headers */,
+				3F592BCC6534FE4A2DC1BCDA /* MRGRemoteAccentString.h in Headers */,
+				E0FD2FE2B1BB0AAE259C86CD /* MRGRemoteStringFile.h in Headers */,
+				C378AA37490862167801B00B /* MRGRemoteStringResource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		00D8FA6CFA9861F7A2CCE3F0 /* Pods-MRGLocaleDemoTests */ = {
+		07EB309E34F0DD602826E459 /* Pods-MRGLocale */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A48D3AF235A235FE839680A /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests" */;
+			buildConfigurationList = 2996FCA03DD7343AEA65A74C /* Build configuration list for PBXNativeTarget "Pods-MRGLocale" */;
 			buildPhases = (
-				38B70CB5687EC20BBE054B53 /* Sources */,
-				C9DA7E060EC125A2A094F437 /* Frameworks */,
+				8272382BD258F3002D75E3B4 /* Sources */,
+				31D03D951DC5B278D308B40D /* Frameworks */,
+				58ABAA46631844D9ED996FAF /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8A41209D8A3AD4294A351471 /* PBXTargetDependency */,
-				B0784DF1E4680A9C9BBD8CA0 /* PBXTargetDependency */,
-			);
-			name = "Pods-MRGLocaleDemoTests";
-			productName = "Pods-MRGLocaleDemoTests";
-			productReference = C2D84145C494AC9D5D5AF8CB /* libPods-MRGLocaleDemoTests.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		7BC0C5BE30EC0F15898EB96E /* Pods-MRGLocale */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D9956D7D2B128643438BD52A /* Build configuration list for PBXNativeTarget "Pods-MRGLocale" */;
-			buildPhases = (
-				460F9D27C84823FC17A3262C /* Sources */,
-				B0AC0C6CF83F0525DBABF36F /* Frameworks */,
-				DE96A2E3C0A868C84C0C4AF6 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				66D8C5B4C4BE35CC98EE837A /* PBXTargetDependency */,
+				17FD17708F82D1B2CB7AA019 /* PBXTargetDependency */,
 			);
 			name = "Pods-MRGLocale";
 			productName = "Pods-MRGLocale";
-			productReference = 0A42F3C5D0046D689C7E0E29 /* libPods-MRGLocale.a */;
+			productReference = 8A59A45BAA9522EF831C59AC /* libPods-MRGLocale.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		860B360B00805CD00D9D0192 /* Pods */ = {
+		2B2EF6A5C048499FA306E558 /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5BFBECBC43ED940069F2C6D /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = 6B36F7401D538E48101E73F8 /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				F4DA040C9C0A012BA9876832 /* Sources */,
-				8F2463F46182226877D84CEE /* Frameworks */,
+				E48437743317245C5905FCF7 /* Sources */,
+				F77EC159E3507BE6F690A030 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BFD6A4E85AEDC091656EBBB7 /* PBXTargetDependency */,
-				959DD34D26CB7813150184A9 /* PBXTargetDependency */,
+				288C97F73838A49A33E3E106 /* PBXTargetDependency */,
+				676F773ADB8665956D05A29A /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = 0229860D4F4F9B224F72B1C7 /* libPods.a */;
+			productReference = 2928B60C3D13A7390E75E70D /* libPods.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		99473F3D7DA7BE09DE96B109 /* Pods-MRGLocaleDemoTests-MRGLocale */ = {
+		62B9E757635DDBFD492E5AD0 /* Pods-MRGLocaleDemoTests-MRGLocale */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C1A4300CB692FBBE282273B /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests-MRGLocale" */;
+			buildConfigurationList = 966D637372B1AC908BD6AFD7 /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests-MRGLocale" */;
 			buildPhases = (
-				AD6576CE6A1558B2EEB24FB1 /* Sources */,
-				88C1CA990506B9009A416A81 /* Frameworks */,
-				35A9AD4ADD44A74CDA493C93 /* Headers */,
+				60817BADF4C6C431C9004F0F /* Sources */,
+				500EEAA830218886CD5A0211 /* Frameworks */,
+				6E5939CEF861B927300AC883 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8D6EFDFAED0475750F586CF1 /* PBXTargetDependency */,
+				3E458D209C0E7028DEBA5966 /* PBXTargetDependency */,
 			);
 			name = "Pods-MRGLocaleDemoTests-MRGLocale";
 			productName = "Pods-MRGLocaleDemoTests-MRGLocale";
-			productReference = 3A546182C85F8FFCA029E965 /* libPods-MRGLocaleDemoTests-MRGLocale.a */;
+			productReference = 0C7B08C1A419DD71323A47F2 /* libPods-MRGLocaleDemoTests-MRGLocale.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		D34882DB15D14343A6D0D204 /* Pods-MRGControlPanel */ = {
+		B95035EEB58A84A9C0F82057 /* Pods-MRGLocaleDemoTests-MRGControlPanel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 503D3FF74FB0C23EC6BA9407 /* Build configuration list for PBXNativeTarget "Pods-MRGControlPanel" */;
+			buildConfigurationList = 3832360BC1B5473E3435B559 /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests-MRGControlPanel" */;
 			buildPhases = (
-				6AF17A607F957456F20C8608 /* Sources */,
-				40B36A59CE83C066DADB82BE /* Frameworks */,
-				68EE431142C3ACB033FC9257 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-MRGControlPanel";
-			productName = "Pods-MRGControlPanel";
-			productReference = 2915D1AAAD4E86BB4AADBA4D /* libPods-MRGControlPanel.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		FDCA8D67C547C16C3997CFF3 /* Pods-MRGLocaleDemoTests-MRGControlPanel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2B2F4DF3804FFB3945CE9EF1 /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests-MRGControlPanel" */;
-			buildPhases = (
-				82AB31199387BD0B574D7CA7 /* Sources */,
-				8F7AD68306110F9F152B61FB /* Frameworks */,
-				81F3424F1337239320AFD15F /* Headers */,
+				8E23E367CF253F33AA833B45 /* Sources */,
+				3C779D363AF475AD38E98533 /* Frameworks */,
+				15F42385D94D12BF64DC9389 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -589,167 +554,186 @@
 			);
 			name = "Pods-MRGLocaleDemoTests-MRGControlPanel";
 			productName = "Pods-MRGLocaleDemoTests-MRGControlPanel";
-			productReference = A4B39FCBBA63467F080D4CB2 /* libPods-MRGLocaleDemoTests-MRGControlPanel.a */;
+			productReference = 73FAD9EB650F085873B6CB86 /* libPods-MRGLocaleDemoTests-MRGControlPanel.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F4C0B95A783979B733CDE142 /* Pods-MRGControlPanel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13EB250B5D76336800B977D6 /* Build configuration list for PBXNativeTarget "Pods-MRGControlPanel" */;
+			buildPhases = (
+				750D26E89AB35643B3826B82 /* Sources */,
+				6C982C49BBAD2F34E3CD2C7D /* Frameworks */,
+				2CE6A892572D1583FFB33D72 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MRGControlPanel";
+			productName = "Pods-MRGControlPanel";
+			productReference = D76E3524CDEDD59FB390A99B /* libPods-MRGControlPanel.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F7C5B6632621A870B86E6BCE /* Pods-MRGLocaleDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCBD2C8E1B46B1C12823B5A8 /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests" */;
+			buildPhases = (
+				1516C9869AF5BCF9A94106C2 /* Sources */,
+				6313D309F193A9D43F0A1035 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5527E6DC05F0FFAC79208F7 /* PBXTargetDependency */,
+				9F200B54C74E312B2E4A6669 /* PBXTargetDependency */,
+			);
+			name = "Pods-MRGLocaleDemoTests";
+			productName = "Pods-MRGLocaleDemoTests";
+			productReference = DA25E01B8D9910F22DE3A500 /* libPods-MRGLocaleDemoTests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CFD56EFE36F3B3739458E4D8 /* Project object */ = {
+		5AD0258107B85FD9333D9AEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0640;
 			};
-			buildConfigurationList = 91745D68A36D7B29F9390615 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 9A0AB21FE8E72450720D69DE /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 19E7BEE52F9C2D4F6C2EB6E7;
-			productRefGroup = 4FB14C88526CE8F99BD33BC6 /* Products */;
+			mainGroup = 7524AD6EF79F9948B69EC16C;
+			productRefGroup = C71EE326401DFBEB14793F57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				860B360B00805CD00D9D0192 /* Pods */,
-				D34882DB15D14343A6D0D204 /* Pods-MRGControlPanel */,
-				7BC0C5BE30EC0F15898EB96E /* Pods-MRGLocale */,
-				00D8FA6CFA9861F7A2CCE3F0 /* Pods-MRGLocaleDemoTests */,
-				FDCA8D67C547C16C3997CFF3 /* Pods-MRGLocaleDemoTests-MRGControlPanel */,
-				99473F3D7DA7BE09DE96B109 /* Pods-MRGLocaleDemoTests-MRGLocale */,
+				2B2EF6A5C048499FA306E558 /* Pods */,
+				F4C0B95A783979B733CDE142 /* Pods-MRGControlPanel */,
+				07EB309E34F0DD602826E459 /* Pods-MRGLocale */,
+				F7C5B6632621A870B86E6BCE /* Pods-MRGLocaleDemoTests */,
+				B95035EEB58A84A9C0F82057 /* Pods-MRGLocaleDemoTests-MRGControlPanel */,
+				62B9E757635DDBFD492E5AD0 /* Pods-MRGLocaleDemoTests-MRGLocale */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		38B70CB5687EC20BBE054B53 /* Sources */ = {
+		1516C9869AF5BCF9A94106C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A7FF10DC69D1D2F75B40801 /* Pods-MRGLocaleDemoTests-dummy.m in Sources */,
+				8A77F3FF48A36B5CAE8A812C /* Pods-MRGLocaleDemoTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		460F9D27C84823FC17A3262C /* Sources */ = {
+		60817BADF4C6C431C9004F0F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27EE7550AB4727A6E9E8ECE9 /* MRGLocale.m in Sources */,
-				C7E11CF1525BDE85CE7EBB7D /* MRGLocaleControlPanelPluginView.m in Sources */,
-				6E69A84FE994413C6D66FB0D /* MRGLocaleControlPanelPluginViewController.m in Sources */,
-				9853E5027835E50DCD546403 /* MRGRemoteAccentString.m in Sources */,
-				35891D4B36F47588F302EB84 /* MRGRemoteStringFile.m in Sources */,
-				7BC96FF3537631E5EA0B7B5D /* Pods-MRGLocale-dummy.m in Sources */,
+				B3283BA174F1CF496F2B2F8D /* MRGLocale.m in Sources */,
+				48F24925E26ED587D371C81D /* MRGLocaleControlPanelPluginView.m in Sources */,
+				40768885F14EAD08C460D00E /* MRGLocaleControlPanelPluginViewController.m in Sources */,
+				7A5C9057489DCF4325DFCFCA /* MRGRemoteAccentString.m in Sources */,
+				1D1AFB556E1920431B08ADFB /* MRGRemoteStringFile.m in Sources */,
+				408D910E1EAFA8699EBABFD5 /* Pods-MRGLocaleDemoTests-MRGLocale-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6AF17A607F957456F20C8608 /* Sources */ = {
+		750D26E89AB35643B3826B82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A945921537E1E3B1B826218B /* MRGControlPanel.m in Sources */,
-				D764039F5E2087FF7CBDF601 /* MRGControlPanelController.m in Sources */,
-				D94FF0DAA105FAE82508FCF9 /* MRGControlPanelPluginViewCell.m in Sources */,
-				BFA7D19BA723ACE4AA108631 /* MRGControlPanelViewController.m in Sources */,
-				27DCE84934E0F9024ACED49A /* Pods-MRGControlPanel-dummy.m in Sources */,
+				D121505ED7920510253F7C18 /* MRGControlPanel.m in Sources */,
+				5BBDC912A0F4525C8FCD516B /* MRGControlPanelController.m in Sources */,
+				955371EE04777AA4704DE4E2 /* MRGControlPanelPluginViewCell.m in Sources */,
+				0B3F2CBA89BBDD1D138C755E /* MRGControlPanelViewController.m in Sources */,
+				BF3CF51D9654A5BDCBBA9410 /* Pods-MRGControlPanel-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82AB31199387BD0B574D7CA7 /* Sources */ = {
+		8272382BD258F3002D75E3B4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2825853073D94958745F5105 /* MRGControlPanel.m in Sources */,
-				EF08B7305A19979AEC8BBB33 /* MRGControlPanelController.m in Sources */,
-				0A0DBE9E86A0F97C2FFC05E6 /* MRGControlPanelPluginViewCell.m in Sources */,
-				8B20972DBEDA9C0AD99E9081 /* MRGControlPanelViewController.m in Sources */,
-				77220378443F7F9954EFD29A /* Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m in Sources */,
+				725378BFE4559E61C0548A40 /* MRGLocale.m in Sources */,
+				5E1E8EC59508593BF2390DA6 /* MRGLocaleControlPanelPluginView.m in Sources */,
+				EC83907EC30ED2668849C817 /* MRGLocaleControlPanelPluginViewController.m in Sources */,
+				27F6796139B1D21164072833 /* MRGRemoteAccentString.m in Sources */,
+				B31F59C2C32EE24AF74109A4 /* MRGRemoteStringFile.m in Sources */,
+				9F49A91BD257F6CD0FD742AA /* Pods-MRGLocale-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD6576CE6A1558B2EEB24FB1 /* Sources */ = {
+		8E23E367CF253F33AA833B45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40D90AF01A3FC5FD39182086 /* MRGLocale.m in Sources */,
-				508C2E3B0299397D325398F1 /* MRGLocaleControlPanelPluginView.m in Sources */,
-				02E6C58FF4DD88C4A2317486 /* MRGLocaleControlPanelPluginViewController.m in Sources */,
-				4043124BC25A5D6BD22EAF98 /* MRGRemoteAccentString.m in Sources */,
-				A838BB332F0B2C7182FC12BA /* MRGRemoteStringFile.m in Sources */,
-				60C5A683D56BDC190C15A29E /* Pods-MRGLocaleDemoTests-MRGLocale-dummy.m in Sources */,
+				3F8161E8E6833052CE53EC8E /* MRGControlPanel.m in Sources */,
+				EB63B6BF111AD4007F2CD9FB /* MRGControlPanelController.m in Sources */,
+				95A503C0034025061C36BAAB /* MRGControlPanelPluginViewCell.m in Sources */,
+				97EF5208D4DEEE6D4B432F83 /* MRGControlPanelViewController.m in Sources */,
+				17F5B8DDA3148B8E32F1F30A /* Pods-MRGLocaleDemoTests-MRGControlPanel-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4DA040C9C0A012BA9876832 /* Sources */ = {
+		E48437743317245C5905FCF7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A48FDD219646823D666B111 /* Pods-dummy.m in Sources */,
+				D0ACBEA17FECC6B0AFA4611D /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		66D8C5B4C4BE35CC98EE837A /* PBXTargetDependency */ = {
+		17FD17708F82D1B2CB7AA019 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MRGControlPanel";
-			target = D34882DB15D14343A6D0D204 /* Pods-MRGControlPanel */;
-			targetProxy = C8EFBF5BEA3F0E112E437BD6 /* PBXContainerItemProxy */;
+			target = F4C0B95A783979B733CDE142 /* Pods-MRGControlPanel */;
+			targetProxy = 76688C71E1020E58A1CCF95F /* PBXContainerItemProxy */;
 		};
-		8A41209D8A3AD4294A351471 /* PBXTargetDependency */ = {
+		288C97F73838A49A33E3E106 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MRGControlPanel";
+			target = F4C0B95A783979B733CDE142 /* Pods-MRGControlPanel */;
+			targetProxy = 82C923165399BD6C17FC8EB4 /* PBXContainerItemProxy */;
+		};
+		3E458D209C0E7028DEBA5966 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MRGLocaleDemoTests-MRGControlPanel";
-			target = FDCA8D67C547C16C3997CFF3 /* Pods-MRGLocaleDemoTests-MRGControlPanel */;
-			targetProxy = 63C4BF9662599C140BB20B03 /* PBXContainerItemProxy */;
+			target = B95035EEB58A84A9C0F82057 /* Pods-MRGLocaleDemoTests-MRGControlPanel */;
+			targetProxy = 813FD13F8FB405012BE75D7F /* PBXContainerItemProxy */;
 		};
-		8D6EFDFAED0475750F586CF1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-MRGLocaleDemoTests-MRGControlPanel";
-			target = FDCA8D67C547C16C3997CFF3 /* Pods-MRGLocaleDemoTests-MRGControlPanel */;
-			targetProxy = 887C89D03F4F18A966C8E8DF /* PBXContainerItemProxy */;
-		};
-		959DD34D26CB7813150184A9 /* PBXTargetDependency */ = {
+		676F773ADB8665956D05A29A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MRGLocale";
-			target = 7BC0C5BE30EC0F15898EB96E /* Pods-MRGLocale */;
-			targetProxy = 45476160B44442D30726BEE7 /* PBXContainerItemProxy */;
+			target = 07EB309E34F0DD602826E459 /* Pods-MRGLocale */;
+			targetProxy = 07C1B698DDC725D1416278A8 /* PBXContainerItemProxy */;
 		};
-		B0784DF1E4680A9C9BBD8CA0 /* PBXTargetDependency */ = {
+		9F200B54C74E312B2E4A6669 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-MRGLocaleDemoTests-MRGLocale";
-			target = 99473F3D7DA7BE09DE96B109 /* Pods-MRGLocaleDemoTests-MRGLocale */;
-			targetProxy = EDA0F9287663DCA4B1444856 /* PBXContainerItemProxy */;
+			target = 62B9E757635DDBFD492E5AD0 /* Pods-MRGLocaleDemoTests-MRGLocale */;
+			targetProxy = 0643534AC42E9621CB6D234B /* PBXContainerItemProxy */;
 		};
-		BFD6A4E85AEDC091656EBBB7 /* PBXTargetDependency */ = {
+		E5527E6DC05F0FFAC79208F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "Pods-MRGControlPanel";
-			target = D34882DB15D14343A6D0D204 /* Pods-MRGControlPanel */;
-			targetProxy = 4136A51F7E0B9CA70B24B8FC /* PBXContainerItemProxy */;
+			name = "Pods-MRGLocaleDemoTests-MRGControlPanel";
+			target = B95035EEB58A84A9C0F82057 /* Pods-MRGLocaleDemoTests-MRGControlPanel */;
+			targetProxy = 276E5F96981B0944607E05BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		04112045C03AFC5FB6153E0F /* Release */ = {
+		095A38360C45C12E00325571 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FA8655D726E3B3FC28B37680 /* Pods-MRGLocaleDemoTests.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		09BC3B4D0B5D8A3C0C6C889D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D88C607EDCA0C24ED9DD16D6 /* Pods-MRGControlPanel-Private.xcconfig */;
+			baseConfigurationReference = AE18A45E93C482D5E67B3F75 /* Pods-MRGControlPanel-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGControlPanel/Pods-MRGControlPanel-prefix.pch";
@@ -763,57 +747,9 @@
 			};
 			name = Debug;
 		};
-		1402F8819AE570F4FD7F5121 /* Release */ = {
+		189796ED8BC12292153117AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E83E7DA3887705C24DE9BF20 /* Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		3839B456A342818FE228B661 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AA199D9A3174C79BEB755BE /* Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		8587CB5CCFB3C8E765337CFE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC9D2B0C8C6B6C8F2530F11F /* Pods-MRGLocaleDemoTests.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		9434124BBC4DE04F6B35BC15 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 022E4C2A3388B990C295DBDA /* Pods-MRGLocale-Private.xcconfig */;
+			baseConfigurationReference = 2E868502E65C45C9D08B2FF2 /* Pods-MRGLocale-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGLocale/Pods-MRGLocale-prefix.pch";
@@ -827,7 +763,137 @@
 			};
 			name = Debug;
 		};
-		99FC6C8922518A186C59A6BF /* Debug */ = {
+		2A648DDD27228C822F9094C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A788E6289B8F9C2A68DF184 /* Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3E455D60F8CA6F4AD3F4C4A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B7AE95F83C1ACAC01250A4B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		42220C31D7D25608B443F817 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE18A45E93C482D5E67B3F75 /* Pods-MRGControlPanel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGControlPanel/Pods-MRGControlPanel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5B344476EFB45851D636C975 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E868502E65C45C9D08B2FF2 /* Pods-MRGLocale-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGLocale/Pods-MRGLocale-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		67D9BF697541DECC6DECD595 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0128F16778506F736B7C942 /* Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7E31E0CEA9215039E68F94B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F530166E979590311680FB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F963FFE6723DB06567E05AD /* Pods-MRGLocaleDemoTests.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B14D4968735F807137E1ADCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -866,45 +932,45 @@
 			};
 			name = Debug;
 		};
-		AA6827CF7221D848CE540834 /* Release */ = {
+		C5677270808B40E4F35DD8B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D88C607EDCA0C24ED9DD16D6 /* Pods-MRGControlPanel-Private.xcconfig */;
+			baseConfigurationReference = C338B85378D6D7A7C5080AB0 /* Pods-MRGLocaleDemoTests.release.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGControlPanel/Pods-MRGControlPanel-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		C2A1EEB0188A13275C319048 /* Debug */ = {
+		DFFDB72F5D45781168279ED6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E83E7DA3887705C24DE9BF20 /* Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig */;
+			baseConfigurationReference = EEE9E7702CDB83E7C922F4B5 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E5C03BC2846E4AF26BC4A9B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A788E6289B8F9C2A68DF184 /* Pods-MRGLocaleDemoTests-MRGControlPanel-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGLocaleDemoTests-MRGControlPanel/Pods-MRGLocaleDemoTests-MRGControlPanel-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		C2BE47443B82ADA9986D9C8E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 022E4C2A3388B990C295DBDA /* Pods-MRGLocale-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGLocale/Pods-MRGLocale-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -914,155 +980,89 @@
 			};
 			name = Release;
 		};
-		C8B6F1E13A4EB43A573DAD8A /* Release */ = {
+		E893AF8A15FA0F9BEC86EDFA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AA199D9A3174C79BEB755BE /* Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig */;
+			baseConfigurationReference = C0128F16778506F736B7C942 /* Pods-MRGLocaleDemoTests-MRGLocale-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Pods-MRGLocaleDemoTests-MRGLocale/Pods-MRGLocaleDemoTests-MRGLocale-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		D0BDC08779EB5B3B7E6C4F7B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		D25B137B3223415995C491F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EEB6CFD1F464BF4CF00855E /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		DC6CA7F15DBFA26897015A1F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4AEE0D48056919FEB66754E /* Pods.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B2F4DF3804FFB3945CE9EF1 /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests-MRGControlPanel" */ = {
+		13EB250B5D76336800B977D6 /* Build configuration list for PBXNativeTarget "Pods-MRGControlPanel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C2A1EEB0188A13275C319048 /* Debug */,
-				1402F8819AE570F4FD7F5121 /* Release */,
+				095A38360C45C12E00325571 /* Debug */,
+				42220C31D7D25608B443F817 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A48D3AF235A235FE839680A /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests" */ = {
+		2996FCA03DD7343AEA65A74C /* Build configuration list for PBXNativeTarget "Pods-MRGLocale" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8587CB5CCFB3C8E765337CFE /* Debug */,
-				04112045C03AFC5FB6153E0F /* Release */,
+				189796ED8BC12292153117AD /* Debug */,
+				5B344476EFB45851D636C975 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		503D3FF74FB0C23EC6BA9407 /* Build configuration list for PBXNativeTarget "Pods-MRGControlPanel" */ = {
+		3832360BC1B5473E3435B559 /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests-MRGControlPanel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				09BC3B4D0B5D8A3C0C6C889D /* Debug */,
-				AA6827CF7221D848CE540834 /* Release */,
+				2A648DDD27228C822F9094C0 /* Debug */,
+				E5C03BC2846E4AF26BC4A9B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		91745D68A36D7B29F9390615 /* Build configuration list for PBXProject "Pods" */ = {
+		6B36F7401D538E48101E73F8 /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99FC6C8922518A186C59A6BF /* Debug */,
-				D0BDC08779EB5B3B7E6C4F7B /* Release */,
+				3E455D60F8CA6F4AD3F4C4A9 /* Debug */,
+				DFFDB72F5D45781168279ED6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C1A4300CB692FBBE282273B /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests-MRGLocale" */ = {
+		966D637372B1AC908BD6AFD7 /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests-MRGLocale" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3839B456A342818FE228B661 /* Debug */,
-				C8B6F1E13A4EB43A573DAD8A /* Release */,
+				E893AF8A15FA0F9BEC86EDFA /* Debug */,
+				67D9BF697541DECC6DECD595 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9956D7D2B128643438BD52A /* Build configuration list for PBXNativeTarget "Pods-MRGLocale" */ = {
+		9A0AB21FE8E72450720D69DE /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9434124BBC4DE04F6B35BC15 /* Debug */,
-				C2BE47443B82ADA9986D9C8E /* Release */,
+				B14D4968735F807137E1ADCB /* Debug */,
+				7E31E0CEA9215039E68F94B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5BFBECBC43ED940069F2C6D /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		FCBD2C8E1B46B1C12823B5A8 /* Build configuration list for PBXNativeTarget "Pods-MRGLocaleDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D25B137B3223415995C491F1 /* Debug */,
-				DC6CA7F15DBFA26897015A1F /* Release */,
+				8F530166E979590311680FB1 /* Debug */,
+				C5677270808B40E4F35DD8B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CFD56EFE36F3B3739458E4D8 /* Project object */;
+	rootObject = 5AD0258107B85FD9333D9AEA /* Project object */;
 }

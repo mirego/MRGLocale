@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'MRGLocale'
-  s.version  = '0.2.2'
+  s.version  = '0.2.3'
   s.license  = 'BSD 3-Clause'
   s.summary  = 'Easily manage your localizations by adding dynamic (remote) refs to be able to update them without an app update'
   s.homepage = 'https://github.com/mirego/MRGLocale'

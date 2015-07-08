@@ -49,7 +49,7 @@
 //------------------------------------------------------------------------------
 - (NSData *)fetchRemoteResource:(NSError **)error
 {
-    NSString* url = [NSString stringWithFormat:@"http://accent.mirego.com/public_api/latest_revision?language=%@&render_format=strings&render_filename=Localizable.strings", self.languageIdentifier];
+    NSString* url = [NSString stringWithFormat:@"https://accent.mirego.com/public_api/latest_revision?language=%@&render_format=strings&render_filename=Localizable.strings", self.languageIdentifier];
     NSMutableURLRequest * urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     NSURLResponse * response = nil;
 

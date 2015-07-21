@@ -70,6 +70,10 @@ In Xcode, use the regular expression feature of find and replace all to convert 
 
 *Note that `NSLocalizedStringFromTableInBundle` and `NSLocalizedStringWithDefaultValue` are currently not supported by `MRGLocale`*
 
+## Known issues
+
+If you're using MRGLocale in a Watch or an App Extension, make sure you link against the `MRGLocale/Core` subspec so it doesn't link the [MRGControlPanel](https://github.com/mirego/MRGControlPanel) as well (it uses API like UIAlertView and UIApplication's sharedApplication methods that are not allowed in an extension).
+
 ## License
 
 `MRGLocale` is © 2015 [Mirego](http://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).  See the [`LICENSE.md`](https://github.com/mirego/MRGLocale/blob/master/LICENSE.md) file.

@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.authors  = { 'Mirego' => 'info@mirego.com' }
   s.source   = { :git => 'git@github.com:mirego/MRGLocale.git', :tag => s.version.to_s }
   s.requires_arc = true
-  s.ios.deployment_target = '5.0'
+  s.ios.deployment_target = '6.0'
 
   s.default_subspecs = 'Core', 'ControlPanel'
 
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.subspec 'ControlPanel' do |sp|
     sp.ios.deployment_target = '6.0'
     sp.dependency 'MRGLocale/Core'
-    sp.dependency 'MRGControlPanel', '~> 0.0.4'
+    sp.dependency 'MRGControlPanel', '~> 0.0.7'
     sp.source_files = 'MRGLocale/ControlPanel/*.{h,m}'
   end
 end

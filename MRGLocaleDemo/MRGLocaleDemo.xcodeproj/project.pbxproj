@@ -22,6 +22,7 @@
 		4F151A3818C90B76000928BF /* MRGLocaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F151A3718C90B76000928BF /* MRGLocaleTests.m */; };
 		818EF82D1CC442A76A57B895 /* libPods-MRGLocaleDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE21A94EBD135F35A1CE1FE /* libPods-MRGLocaleDemoTests.a */; };
 		9B9705DFAB8E6822DF276436 /* MRGRemoteStringResourceMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9706DB147D553CC9C9D95C /* MRGRemoteStringResourceMock.m */; };
+		A642C43E1C80FBC100710183 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A642C43D1C80FBC100710183 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		7F16D45014412E73FF29EE4E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9706DB147D553CC9C9D95C /* MRGRemoteStringResourceMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRGRemoteStringResourceMock.m; sourceTree = "<group>"; };
 		9B970DC46D0CF6455FDC0BA3 /* MRGRemoteStringResourceMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRGRemoteStringResourceMock.h; sourceTree = "<group>"; };
+		A642C43D1C80FBC100710183 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B72C288921A94216977A3F95 /* libPods-MRGLocaleDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocaleDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 				4F151A2118C90B76000928BF /* MRGAppDelegate.h */,
 				4F151A2218C90B76000928BF /* MRGAppDelegate.m */,
 				4F151A2418C90B76000928BF /* Images.xcassets */,
+				A642C43D1C80FBC100710183 /* Launch Screen.storyboard */,
 				4F151A1918C90B76000928BF /* Supporting Files */,
 			);
 			path = MRGLocaleDemo;
@@ -148,9 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				4F151A3718C90B76000928BF /* MRGLocaleTests.m */,
-				4F151A3218C90B76000928BF /* Supporting Files */,
-				9B9706DB147D553CC9C9D95C /* MRGRemoteStringResourceMock.m */,
 				9B970DC46D0CF6455FDC0BA3 /* MRGRemoteStringResourceMock.h */,
+				9B9706DB147D553CC9C9D95C /* MRGRemoteStringResourceMock.m */,
+				4F151A3218C90B76000928BF /* Supporting Files */,
 			);
 			path = MRGLocaleDemoTests;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				4F151A0C18C90B76000928BF /* Frameworks */,
 				4F151A0D18C90B76000928BF /* Resources */,
 				793F1C0D3D3F4E3996EC6C16 /* Copy Pods Resources */,
+				6C73D462F4101E8E2E038A2E /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,7 +228,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MRG;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Mirego;
 				TargetAttributes = {
 					4F151A2918C90B76000928BF = {
@@ -255,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A642C43E1C80FBC100710183 /* Launch Screen.storyboard in Resources */,
 				4F151A1D18C90B76000928BF /* InfoPlist.strings in Resources */,
 				4F151A2518C90B76000928BF /* Images.xcassets in Resources */,
 			);
@@ -284,6 +289,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6C73D462F4101E8E2E038A2E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		793F1C0D3D3F4E3996EC6C16 /* Copy Pods Resources */ = {
@@ -400,6 +420,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -463,6 +484,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MRGLocaleDemo/MRGLocaleDemo-Prefix.pch";
 				INFOPLIST_FILE = "MRGLocaleDemo/MRGLocaleDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mirego.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -477,6 +499,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MRGLocaleDemo/MRGLocaleDemo-Prefix.pch";
 				INFOPLIST_FILE = "MRGLocaleDemo/MRGLocaleDemo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mirego.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -494,6 +517,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "MRGLocaleDemoTests/MRGLocaleDemoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "mirego.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -508,6 +532,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MRGLocaleDemo/MRGLocaleDemo-Prefix.pch";
 				INFOPLIST_FILE = "MRGLocaleDemoTests/MRGLocaleDemoTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "mirego.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

@@ -1,6 +1,0 @@
-#include "Pods-MRGLocaleDemoTests-MRGControlPanel.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/MRGControlPanel" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MRGControlPanel" "${PODS_ROOT}/Headers/Public/MRGLocale"
-OTHER_LDFLAGS = ${PODS_MRGLOCALEDEMOTESTS_MRGCONTROLPANEL_OTHER_LDFLAGS} -ObjC
-PODS_ROOT = ${SRCROOT}
-SKIP_INSTALL = YES

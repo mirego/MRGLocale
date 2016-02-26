@@ -1,3 +1,4 @@
+//
 // Copyright (c) 2015, Mirego
 // All rights reserved.
 //
@@ -37,9 +38,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    self.window.rootViewController = [UIViewController new];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self showControlPanel];
+        });
+    });
+    
     return YES;
 }
 

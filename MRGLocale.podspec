@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'MRGLocale'
-  s.version  = '0.2.7'
+  s.version  = '0.2.8'
   s.license  = 'BSD 3-Clause'
   s.summary  = 'Easily manage your localizations by adding dynamic (remote) refs to be able to update them without an app update'
   s.homepage = 'https://github.com/mirego/MRGLocale'
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.subspec 'Core' do |sp|
     sp.source_files = 'MRGLocale/*.{h,m}'
   end
-  
+
   s.subspec 'ControlPanel' do |sp|
     sp.ios.deployment_target = '6.0'
     sp.dependency 'MRGLocale/Core'

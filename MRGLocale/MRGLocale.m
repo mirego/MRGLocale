@@ -99,11 +99,18 @@ static NSString *const MRGLocaleFile = @"Localizable.strings";
     if (self.hasRemoteStringResources) {
         retVal = [[self remoteStringResourceBundle] localizedStringForKey:key value:nil table:[self defaultLocaleTable]];
     }
-    if (!retVal || [retVal isEqualToString:key]) {
+    if ((!retVal || [retVal isEqualToString:key]) && tableName) {
         if (self.localLanguageBundleOverride != nil) {
             retVal = NSLocalizedStringFromTableInBundle(key, tableName, self.localLanguageBundleOverride, nil);
         } else {
             retVal = NSLocalizedStringFromTable(key, tableName, nil);
+        }
+    }
+    if (!retVal || [retVal isEqualToString:key]) {
+        if (self.localLanguageBundleOverride != nil) {
+            retVal = NSLocalizedStringFromTableInBundle(key, nil, self.localLanguageBundleOverride, nil);
+        } else {
+            retVal = NSLocalizedStringFromTable(key, nil, nil);
         }
     }
     return retVal;

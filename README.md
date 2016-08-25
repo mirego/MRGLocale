@@ -48,16 +48,6 @@ Create a class that conforms to the `MRGRemoteStringResource` protocol. Long sto
 - (NSData *)fetchRemoteResource:(NSError **)error;
 ```
 
-### Why not [Accent](https://github.com/mirego/Accent-Web)
-
-Ask for an API key from folks @mirego and use this code:
-
-```objc
-MRGRemoteAccentString *accentStringResource = [[MRGRemoteAccentString alloc] initWithLanguageIdentifier:@"en" apiKey:@"YOUR_API_KEY"];
-
-[[MRGLocale sharedInstance] setRemoteStringResourceList:@[accentStringResource]];
-```
-
 ## Backstage secrets
 
 If a translation is not available from the remote string resource, `MRGLocale` will fallback to the app bundle's `Localizable.strings`
@@ -76,7 +66,7 @@ If you're using MRGLocale in a Watch or an App Extension, make sure you link aga
 
 ## License
 
-`MRGLocale` is © 2015 [Mirego](http://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).  See the [`LICENSE.md`](https://github.com/mirego/MRGLocale/blob/master/LICENSE.md) file.
+`MRGLocale` is © 2016 [Mirego](http://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).  See the [`LICENSE.md`](https://github.com/mirego/MRGLocale/blob/master/LICENSE.md) file.
 
 ## About Mirego
 

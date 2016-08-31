@@ -1,0 +1,8 @@
+author: Mirego
+author_url: https://github.com/mirego
+module: MRGLocale 
+module_version: 0.2.7
+copyright: 2016 Mirego
+readme: README.md
+objc: true
+skip_undocumented: true

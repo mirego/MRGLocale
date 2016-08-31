@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MRGLocale  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="MRGLocale  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">MRGLocale Docs</a> (0% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">MRGLocale Reference</a>
+        <img id="carat" src="img/carat.png" />
+        MRGLocale  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <a href='#mrglocale' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='mrglocale'>MRGLocale</h1>
+<a href='#what-is-it' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='what-is-it'>What is it?</h2>
+
+<p><code>MRGLocale</code> gives you 2 super features:</p>
+
+<ul>
+<li>Change the preferred language in-app</li>
+<li>Update your localizations without building your app</li>
+</ul>
+<a href='#how-to-use-it' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='how-to-use-it'>How to use it</h2>
+<a href='#first-things-first' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='first-things-first'>First things first</h3>
+
+<ul>
+<li>Add <code>MRGLocale</code> in your <code>Podfile</code></li>
+<li>Run <code>pod install</code> in your terminal at the root of your project</li>
+</ul>
+<a href='#use-it-for-real' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='use-it-for-real'>Use it for real</h3>
+
+<p>Since the pod is installed, you no longer use <code>NSLocalizedString()</code>. Use <code>MRGString(key)</code> or <code>MRGStringFromTable(key, table)</code>.</p>
+<a href='#changing-preferred-language' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='changing-preferred-language'>Changing preferred language</h3>
+<pre class="highlight objective_c"><code><span class="p">[[</span><span class="n">MRGLocale</span> <span class="nf">sharedInstance</span><span class="p">]</span> <span class="nf">setLanguageBundleWithLanguageISO639Identifier</span><span class="p">:</span><span class="s">@"fr_CA"</span><span class="p">];</span>
+</code></pre>
+<a href='#updating-your-localizations-dynamically' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='updating-your-localizations-dynamically'>Updating your localizations dynamically</h3>
+
+<p>Say you want to update your localizations with a file on S3:</p>
+<pre class="highlight objective_c"><code><span class="n">MRGRemoteStringFile</span> <span class="o">*</span><span class="n">remoteStringFile</span> <span class="o">=</span> <span class="p">[[</span><span class="n">MRGRemoteStringFile</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithLanguageIdentifier</span><span class="p">:</span><span class="s">@"en"</span> <span class="nf">url</span><span class="p">:[</span><span class="n">NSURL</span> <span class="nf">URLWithString</span><span class="p">:</span><span class="s">@"https://bucket.s3.amazonaws.com/Localizables.json"</span><span class="p">];</span>
+
+<span class="p">[[</span><span class="n">MRGLocale</span> <span class="nf">sharedInstance</span><span class="p">]</span> <span class="nf">setRemoteStringResourceList</span><span class="p">:@[</span><span class="n">remoteStringFile</span><span class="p">]];</span>
+</code></pre>
+
+<p>The code above creates your remote string resources for your updatable localizations. In order to check for updates, you only need to periodically call the following method:
+<code>objc
+[[MRGLocale sharedInstance] refreshRemoteStringResourcesWithCompletion:completionBlock];
+</code>
+<code>- (void)applicationDidBecomeActive:(UIApplication *)application</code> in the app delegate would be a great place. The updates will only be available after you kill and restart the app.</p>
+<a href='#creating-a-customized-q-remote-string-resource-q-for-your-customized-api' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='creating-a-customized-q-remote-string-resource-q-for-your-customized-api'>Creating a customized <q>Remote String Resource</q> for your customized API</h3>
+
+<p>Create a class that conforms to the <code>MRGRemoteStringResource</code> protocol. Long story short, it needs to implement:
+<code>objc
+- (NSString *)languageIdentifier;
+- (NSData *)fetchRemoteResource:(NSError **)error;
+</code></p>
+<a href='#backstage-secrets' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='backstage-secrets'>Backstage secrets</h2>
+
+<p>If a translation is not available from the remote string resource, <code>MRGLocale</code> will fallback to the app bundle&rsquo;s <code>Localizable.strings</code></p>
+<a href='#converting-an-old-project-to-mrglocale' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='converting-an-old-project-to-mrglocale'>Converting an old project to MRGLocale</h2>
+
+<p>In Xcode, use the regular expression feature of find and replace all to convert occurences of <code>NSLocalizedString</code> with <code>MRGString</code>.</p>
+
+<ul>
+<li><q>find</q> <code>NSLocalizedString\(@&quot;([^\)&quot;]*)&quot;([^\)]*)\)</code> and <q>replace</q> with <code>MRGString(@&quot;$1&quot;)</code> for <code>NSLocalizedString</code> occurences</li>
+<li><q>find</q> <code>NSLocalizedStringFromTable\(@&quot;([^\)&quot;]*)&quot;,( )?@&quot;([^\)&quot;]*)&quot;([^\)]*)\)</code> and <q>replace</q> with <code>MRGStringFromTable(@&quot;$1&quot;, @&quot;$3&quot;)</code> for <code>NSLocalizedStringFromTable</code> occurences</li>
+</ul>
+
+<p><em>Note that <code>NSLocalizedStringFromTableInBundle</code> and <code>NSLocalizedStringWithDefaultValue</code> are currently not supported by <code>MRGLocale</code></em></p>
+<a href='#known-issues' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='known-issues'>Known issues</h2>
+
+<p>If you&rsquo;re using MRGLocale in a Watch or an App Extension, make sure you link against the <code>MRGLocale/Core</code> subspec so it doesn&rsquo;t link the <a href="https://github.com/mirego/MRGControlPanel">MRGControlPanel</a> as well (it uses API like UIAlertView and UIApplication&rsquo;s sharedApplication methods that are not allowed in an extension).</p>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p><code>MRGLocale</code> is © 2016 <a href="http://www.mirego.com">Mirego</a> and may be freely distributed under the <a href="http://opensource.org/licenses/BSD-3-Clause">New BSD license</a>.  See the <a href="https://github.com/mirego/MRGLocale/blob/master/LICENSE.md"><code>LICENSE.md</code></a> file.</p>
+<a href='#about-mirego' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='about-mirego'>About Mirego</h2>
+
+<p><a href="http://mirego.com">Mirego</a> is a team of passionate people who believe that work is a place where you can innovate and have fun. We&rsquo;re a team of <a href="http://life.mirego.com">talented people</a> who imagine and build beautiful Web and mobile applications. We come together to share ideas and <a href="http://mirego.org">change the world</a>.</p>
+
+<p>We also <a href="http://open.mirego.com">love open-source software</a> and we try to give back to the community as much as we can.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>2016 Mirego</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

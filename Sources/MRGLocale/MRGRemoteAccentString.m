@@ -53,14 +53,22 @@ NSString * const kMRGLocaleURL = @"https://accent.mirego.com/public_api/latest_r
 {
     NSString* url = [NSString stringWithFormat:kMRGLocaleURL, self.languageIdentifier];
     NSMutableURLRequest * urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
-    NSURLResponse * response = nil;
-
     [urlRequest setValue:self.apiKey forHTTPHeaderField:@"Authorization"];
 
-    NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest
-                                          returningResponse:&response
-                                                      error:error];
-    return [self convertResponseData:data];
+    __block NSData *responseData = nil;
+    __block NSError *requestError = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+
+    [[[NSURLSession sharedSession] dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *taskError) {
+        responseData = data;
+        requestError = taskError;
+        dispatch_semaphore_signal(semaphore);
+    }] resume];
+
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+
+    if (error) *error = requestError;
+    return [self convertResponseData:responseData];
 }
 
 //------------------------------------------------------------------------------

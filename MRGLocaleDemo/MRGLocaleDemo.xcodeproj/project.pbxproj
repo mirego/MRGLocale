@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36B0129251512685BEF4209B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F16D45014412E73FF29EE4E /* libPods.a */; };
+		3C8718B72FCF5C97004614DA /* MRGLocale in Frameworks */ = {isa = PBXBuildFile; productRef = 3C8718B62FCF5C97004614DA /* MRGLocale */; };
+		3C8718B92FCF5C97004614DA /* MRGLocaleControlPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 3C8718B82FCF5C97004614DA /* MRGLocaleControlPanel */; };
 		4F151A1318C90B76000928BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F151A1218C90B76000928BF /* Foundation.framework */; };
 		4F151A1518C90B76000928BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F151A1418C90B76000928BF /* CoreGraphics.framework */; };
 		4F151A1718C90B76000928BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F151A1618C90B76000928BF /* UIKit.framework */; };
@@ -20,7 +21,6 @@
 		4F151A2E18C90B76000928BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F151A1618C90B76000928BF /* UIKit.framework */; };
 		4F151A3618C90B76000928BF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F151A3418C90B76000928BF /* InfoPlist.strings */; };
 		4F151A3818C90B76000928BF /* MRGLocaleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F151A3718C90B76000928BF /* MRGLocaleTests.m */; };
-		818EF82D1CC442A76A57B895 /* libPods-MRGLocaleDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE21A94EBD135F35A1CE1FE /* libPods-MRGLocaleDemoTests.a */; };
 		9B9705DFAB8E6822DF276436 /* MRGRemoteStringResourceMock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9706DB147D553CC9C9D95C /* MRGRemoteStringResourceMock.m */; };
 		A642C43E1C80FBC100710183 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A642C43D1C80FBC100710183 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
@@ -36,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F9E69CD7C1E38C9AAE8A1AC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4F151A0F18C90B76000928BF /* MRGLocaleDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MRGLocaleDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F151A1218C90B76000928BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4F151A1418C90B76000928BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,15 +52,10 @@
 		4F151A3318C90B76000928BF /* MRGLocaleDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MRGLocaleDemoTests-Info.plist"; sourceTree = "<group>"; };
 		4F151A3518C90B76000928BF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4F151A3718C90B76000928BF /* MRGLocaleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MRGLocaleTests.m; sourceTree = "<group>"; };
-		509B07DF377017B6532448FD /* Pods-MRGLocaleDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MRGLocaleDemoTests/Pods-MRGLocaleDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5D096A21CB262A6E41CFC0CF /* Pods-MRGLocaleDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MRGLocaleDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MRGLocaleDemoTests/Pods-MRGLocaleDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		67113AED10AB86CD6DCDADD2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		7AE21A94EBD135F35A1CE1FE /* libPods-MRGLocaleDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocaleDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F16D45014412E73FF29EE4E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0BE6A37F6252721F04E783 /* Pods_MRGLocaleDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MRGLocaleDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9706DB147D553CC9C9D95C /* MRGRemoteStringResourceMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRGRemoteStringResourceMock.m; sourceTree = "<group>"; };
 		9B970DC46D0CF6455FDC0BA3 /* MRGRemoteStringResourceMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRGRemoteStringResourceMock.h; sourceTree = "<group>"; };
 		A642C43D1C80FBC100710183 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		B72C288921A94216977A3F95 /* libPods-MRGLocaleDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MRGLocaleDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +64,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F151A1518C90B76000928BF /* CoreGraphics.framework in Frameworks */,
+				3C8718B92FCF5C97004614DA /* MRGLocaleControlPanel in Frameworks */,
 				4F151A1718C90B76000928BF /* UIKit.framework in Frameworks */,
 				4F151A1318C90B76000928BF /* Foundation.framework in Frameworks */,
-				36B0129251512685BEF4209B /* libPods.a in Frameworks */,
+				3C8718B72FCF5C97004614DA /* MRGLocale in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +78,6 @@
 				4F151A2C18C90B76000928BF /* XCTest.framework in Frameworks */,
 				4F151A2E18C90B76000928BF /* UIKit.framework in Frameworks */,
 				4F151A2D18C90B76000928BF /* Foundation.framework in Frameworks */,
-				818EF82D1CC442A76A57B895 /* libPods-MRGLocaleDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +91,6 @@
 				4F151A3118C90B76000928BF /* MRGLocaleDemoTests */,
 				4F151A1118C90B76000928BF /* Frameworks */,
 				4F151A1018C90B76000928BF /* Products */,
-				BB2627CFDC1C532DCE4ED174 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,9 +110,7 @@
 				4F151A1418C90B76000928BF /* CoreGraphics.framework */,
 				4F151A1618C90B76000928BF /* UIKit.framework */,
 				4F151A2B18C90B76000928BF /* XCTest.framework */,
-				B72C288921A94216977A3F95 /* libPods-MRGLocaleDemo.a */,
-				7F16D45014412E73FF29EE4E /* libPods.a */,
-				7AE21A94EBD135F35A1CE1FE /* libPods-MRGLocaleDemoTests.a */,
+				9A0BE6A37F6252721F04E783 /* Pods_MRGLocaleDemoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -167,17 +158,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BB2627CFDC1C532DCE4ED174 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1F9E69CD7C1E38C9AAE8A1AC /* Pods.debug.xcconfig */,
-				67113AED10AB86CD6DCDADD2 /* Pods.release.xcconfig */,
-				509B07DF377017B6532448FD /* Pods-MRGLocaleDemoTests.debug.xcconfig */,
-				5D096A21CB262A6E41CFC0CF /* Pods-MRGLocaleDemoTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,12 +165,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F151A3B18C90B76000928BF /* Build configuration list for PBXNativeTarget "MRGLocaleDemo" */;
 			buildPhases = (
-				BC18790CE4304EEA9DF7420F /* Check Pods Manifest.lock */,
 				4F151A0B18C90B76000928BF /* Sources */,
 				4F151A0C18C90B76000928BF /* Frameworks */,
 				4F151A0D18C90B76000928BF /* Resources */,
-				793F1C0D3D3F4E3996EC6C16 /* Copy Pods Resources */,
-				6C73D462F4101E8E2E038A2E /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,11 +182,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F151A3E18C90B76000928BF /* Build configuration list for PBXNativeTarget "MRGLocaleDemoTests" */;
 			buildPhases = (
-				4C3B904ECB596D8992F019EF /* Check Pods Manifest.lock */,
 				4F151A2618C90B76000928BF /* Sources */,
 				4F151A2718C90B76000928BF /* Frameworks */,
 				4F151A2818C90B76000928BF /* Resources */,
-				C4206D9AC706698DFF11A265 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,9 +216,13 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 4F151A0618C90B76000928BF;
+			packageReferences = (
+				3C8718B52FCF5C97004614DA /* XCLocalSwiftPackageReference "../../MRGLocale" */,
+			);
 			productRefGroup = 4F151A1018C90B76000928BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,84 +253,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4C3B904ECB596D8992F019EF /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6C73D462F4101E8E2E038A2E /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		793F1C0D3D3F4E3996EC6C16 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BC18790CE4304EEA9DF7420F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C4206D9AC706698DFF11A265 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MRGLocaleDemoTests/Pods-MRGLocaleDemoTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4F151A0B18C90B76000928BF /* Sources */ = {
@@ -477,13 +378,13 @@
 		};
 		4F151A3C18C90B76000928BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F9E69CD7C1E38C9AAE8A1AC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MRGLocaleDemo/MRGLocaleDemo-Prefix.pch";
 				INFOPLIST_FILE = "MRGLocaleDemo/MRGLocaleDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mirego.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -492,13 +393,13 @@
 		};
 		4F151A3D18C90B76000928BF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67113AED10AB86CD6DCDADD2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MRGLocaleDemo/MRGLocaleDemo-Prefix.pch";
 				INFOPLIST_FILE = "MRGLocaleDemo/MRGLocaleDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mirego.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -507,7 +408,6 @@
 		};
 		4F151A3F18C90B76000928BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 509B07DF377017B6532448FD /* Pods-MRGLocaleDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MRGLocaleDemo.app/MRGLocaleDemo";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -517,6 +417,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "MRGLocaleDemoTests/MRGLocaleDemoTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "mirego.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -526,12 +427,12 @@
 		};
 		4F151A4018C90B76000928BF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D096A21CB262A6E41CFC0CF /* Pods-MRGLocaleDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MRGLocaleDemo.app/MRGLocaleDemo";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MRGLocaleDemo/MRGLocaleDemo-Prefix.pch";
 				INFOPLIST_FILE = "MRGLocaleDemoTests/MRGLocaleDemoTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "mirego.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -570,6 +471,24 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		3C8718B52FCF5C97004614DA /* XCLocalSwiftPackageReference "../../MRGLocale" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../MRGLocale;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3C8718B62FCF5C97004614DA /* MRGLocale */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MRGLocale;
+		};
+		3C8718B82FCF5C97004614DA /* MRGLocaleControlPanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MRGLocaleControlPanel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4F151A0718C90B76000928BF /* Project object */;
 }

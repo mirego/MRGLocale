@@ -31,10 +31,8 @@
 #import <MRGLocale.h>
 #import <MRGRemoteStringFile.h>
 
-@interface MRGLocaleControlPanelPluginViewController () <UIAlertViewDelegate>
+@interface MRGLocaleControlPanelPluginViewController ()
 @property (nonatomic) MRGLocaleControlPanelPluginView *mainView;
-@property (nonatomic) UIAlertView *addAlertView;
-@property (nonatomic) UIAlertView *refreshAlertView;
 @end
 
 @implementation MRGLocaleControlPanelPluginViewController
@@ -70,13 +68,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc
-{
-    _addAlertView.delegate = nil;
-    _refreshAlertView.delegate = nil;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -85,43 +76,39 @@
 
 - (void)refreshButtonTouched:(id)sender
 {
-    _refreshAlertView = [[UIAlertView alloc] initWithTitle:MRGString(@"Refresh?") message:MRGString(@"You can also enter a new URL") delegate:self cancelButtonTitle:MRGString(@"Cancel") otherButtonTitles:MRGString(@"Refresh"), nil];
-    _refreshAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [_refreshAlertView show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:MRGString(@"Refresh?")
+                                                                   message:MRGString(@"You can also enter a new URL")
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:nil];
+    [alert addAction:[UIAlertAction actionWithTitle:MRGString(@"Cancel") style:UIAlertActionStyleCancel handler:nil]];
+
+    __weak MRGLocaleControlPanelPluginViewController *wself = self;
+    [alert addAction:[UIAlertAction actionWithTitle:MRGString(@"Refresh") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *urlString = alert.textFields.firstObject.text;
+        if (!urlString) return;
+        MRGRemoteStringFile *remoteStringFile = [[MRGRemoteStringFile alloc] initWithLanguageIdentifier:[MRGLocale systemLangIdentifier] url:[NSURL URLWithString:urlString]];
+        [[MRGLocale sharedInstance] setRemoteStringResourceList:@[remoteStringFile]];
+        [[MRGLocale sharedInstance] refreshRemoteStringResourcesWithCompletion:^(NSError *error) {
+            [wself.mainView refreshLabel];
+            exit(0);
+        }];
+    }]];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)addButtonTouched:(id)sender
 {
-    _addAlertView = [[UIAlertView alloc] initWithTitle:MRGString(@"Test localizations") message:MRGString(@"Enter a test localizable key") delegate:self cancelButtonTitle:MRGString(@"Cancel") otherButtonTitles:MRGString(@"Change"), nil];
-    _addAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [_addAlertView show];
-}
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:MRGString(@"Test localizations")
+                                                                   message:MRGString(@"Enter a test localizable key")
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:nil];
+    [alert addAction:[UIAlertAction actionWithTitle:MRGString(@"Cancel") style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:MRGString(@"Change") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self->_mainView setLabelTextWithKey:alert.textFields.firstObject.text];
+    }]];
 
-////////////////////////////////////////////////////////////////////////
-#pragma mark UIAlertView Delegate
-////////////////////////////////////////////////////////////////////////
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (alertView == _addAlertView && buttonIndex > 0) {
-        [_mainView setLabelTextWithKey:[[alertView textFieldAtIndex:0] text]];
-        
-    } else if (alertView == _refreshAlertView && buttonIndex > 0) {
-        NSString *urlString = [[alertView textFieldAtIndex:0] text];
-        if (urlString) {
-            MRGRemoteStringFile *newRemoteStringFile = [[MRGRemoteStringFile alloc] initWithLanguageIdentifier:[MRGLocale systemLangIdentifier] url:[NSURL URLWithString:urlString]];
-            [[MRGLocale sharedInstance] setRemoteStringResourceList:@[newRemoteStringFile]];
-            
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-            
-            __weak MRGLocaleControlPanelPluginViewController *wself = self;
-            [[MRGLocale sharedInstance] refreshRemoteStringResourcesWithCompletion:^(NSError *error) {
-                [wself.mainView refreshLabel];
-                [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                exit(0);
-            }];
-        }
-    }
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 ////////////////////////////////////////////////////////////////////////

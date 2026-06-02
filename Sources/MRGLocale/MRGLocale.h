@@ -26,6 +26,9 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 #import <Foundation/Foundation.h>
+#import "MRGRemoteStringResource.h"
+#import "MRGRemoteStringFile.h"
+#import "MRGRemoteAccentString.h"
 
 @protocol MRGRemoteStringResource;
 

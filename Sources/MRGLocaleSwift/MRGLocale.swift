@@ -25,8 +25,8 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-import Foundation
+@_exported import MRGLocale
 
-func MRGString(key:String) -> String {
-    return MRGLocale.sharedInstance().localizedStringForKey(key)
+public func MRGString(key: String) -> String {
+    return MRGLocale.sharedInstance().localizedString(forKey: key)
 }

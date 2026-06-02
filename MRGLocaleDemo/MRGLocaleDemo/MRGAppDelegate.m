@@ -27,7 +27,11 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 #import "MRGAppDelegate.h"
+#if __has_include(<MRGControlPanel/MRGControlPanel.h>)
 #import <MRGControlPanel/MRGControlPanel.h>
+#else
+#import <MRGControlPanel.h>
+#endif
 #import "MRGLocaleControlPanelPluginViewController.h"
 
 @implementation MRGAppDelegate

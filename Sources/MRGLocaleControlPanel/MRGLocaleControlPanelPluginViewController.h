@@ -26,7 +26,11 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 #import <UIKit/UIKit.h>
+#if __has_include(<MRGControlPanel/MRGControlPanelPlugin.h>)
 #import <MRGControlPanel/MRGControlPanelPlugin.h>
+#else
+#import <MRGControlPanelPlugin.h>
+#endif
 
 @interface MRGLocaleControlPanelPluginViewController : UIViewController <MRGControlPanelPlugin>
 

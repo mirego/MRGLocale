@@ -1,0 +1,15 @@
+{
+  "originHash" : "fe18a91f93ba912931908abf70d4bbd143fade074329435f3d58ecc0e70ba8af",
+  "pins" : [
+    {
+      "identity" : "mrgcontrolpanel",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mirego/MRGControlPanel.git",
+      "state" : {
+        "revision" : "3c562b2aa3f0392b226aa7f9b1371e0e4ee265de",
+        "version" : "0.1.2"
+      }
+    }
+  ],
+  "version" : 3
+}

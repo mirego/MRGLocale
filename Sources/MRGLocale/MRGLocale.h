@@ -1,4 +1,3 @@
-//
 // Copyright (c) 2015, Mirego
 // All rights reserved.
 //
@@ -26,49 +25,36 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-#import "MRGAppDelegate.h"
-#if __has_include(<MRGControlPanel/MRGControlPanel.h>)
-#import <MRGControlPanel/MRGControlPanel.h>
-#else
-#import <MRGControlPanel.h>
-#endif
-#import "MRGLocaleControlPanelPluginViewController.h"
+#import <Foundation/Foundation.h>
+#import "MRGRemoteStringResource.h"
+#import "MRGRemoteStringFile.h"
+#import "MRGRemoteAccentString.h"
 
-@implementation MRGAppDelegate
-{
-    MRGControlPanel * _panel;
-}
+@protocol MRGRemoteStringResource;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [UIViewController new];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self showControlPanel];
-        });
-    });
-    
-    return YES;
-}
+@interface MRGLocale : NSObject
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    if ([MRGControlPanel isControlPanelURL:url]) {
-        [self showControlPanel];
-        [_panel openURL:url];
-    }
-    return YES;
-}
++ (MRGLocale *)sharedInstance;
 
-- (void)showControlPanel {
-    _panel = [MRGControlPanel controlPanel];
-    [_panel addPlugin:[MRGLocaleControlPanelPluginViewController plugin]];
-    self.window.rootViewController = [_panel rootViewController];
-    [self.window makeKeyAndVisible];
-}
+// Language
++ (NSString *)systemLangIdentifier;
+
+- (NSString *)getLanguageISO639Identifier;
+- (void)setLanguageBundleWithLanguageISO639Identifier:(NSString *)languageIdentifier;
+
+// Strings
+- (NSString *)localizedStringForKey:(NSString *)key;
+- (NSString *)localizedStringForKey:(NSString *)key inTable:(NSString *)tableName;
+
+// Remote strings
+- (void)setRemoteStringResourceList:(NSArray *)remoteStringResources;
+
+- (void)refreshRemoteStringResourcesWithCompletion:(void(^)(NSError *error))completion;
 
 @end
+
+#define MRGString(key) \
+[[MRGLocale sharedInstance] localizedStringForKey:(key)]
+
+#define MRGStringFromTable(key, table) \
+[[MRGLocale sharedInstance] localizedStringForKey:(key) inTable:(table)]

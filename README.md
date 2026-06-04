@@ -7,12 +7,35 @@
 - Change the preferred language in-app
 - Update your localizations without building your app
 
+## Installation
+
+### Swift Package Manager
+
+Add the following to your `Package.swift` dependencies:
+
+```swift
+.package(url: "https://github.com/mirego/MRGLocale.git", from: "0.3.0")
+```
+
+Then add the target you need to your target's dependencies:
+- `MRGLocale` — core localization functionality
+- `MRGLocaleControlPanel` — optional control panel plugin (requires `MRGLocale`)
+
+Or add it through Xcode: **File → Add Package Dependencies** and enter the repository URL.
+
+### CocoaPods
+
+Add `MRGLocale` in your `Podfile` and run `pod install`:
+
+```ruby
+pod 'MRGLocale'
+```
+
 ## How to use it
 
 ### First things first
 
-- Add `MRGLocale` in your `Podfile`
-- Run `pod install` in your terminal at the root of your project
+- Install `MRGLocale` using either SPM or CocoaPods (see above)
 
 ### Use it for real
 
@@ -62,7 +85,7 @@ In Xcode, use the regular expression feature of find and replace all to convert 
 
 ## Known issues
 
-If you're using MRGLocale in a Watch or an App Extension, make sure you link against the `MRGLocale/Core` subspec so it doesn't link the [MRGControlPanel](https://github.com/mirego/MRGControlPanel) as well (it uses API like UIAlertView and UIApplication's sharedApplication methods that are not allowed in an extension).
+If you're using MRGLocale in a Watch or an App Extension, make sure you only link the `MRGLocale` target (SPM) or `MRGLocale/Core` subspec (CocoaPods) so it doesn't pull in [MRGControlPanel](https://github.com/mirego/MRGControlPanel) (it uses APIs like `UIAlertView` and `UIApplication.sharedApplication` that are not allowed in extensions).
 
 ## License
 

@@ -1,4 +1,3 @@
-//
 // Copyright (c) 2015, Mirego
 // All rights reserved.
 //
@@ -26,49 +25,16 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-#import "MRGAppDelegate.h"
-#if __has_include(<MRGControlPanel/MRGControlPanel.h>)
-#import <MRGControlPanel/MRGControlPanel.h>
+#import <UIKit/UIKit.h>
+#if __has_include(<MRGControlPanel/MRGControlPanelPlugin.h>)
+#import <MRGControlPanel/MRGControlPanelPlugin.h>
 #else
-#import <MRGControlPanel.h>
+#import <MRGControlPanelPlugin.h>
 #endif
-#import "MRGLocaleControlPanelPluginViewController.h"
 
-@implementation MRGAppDelegate
-{
-    MRGControlPanel * _panel;
-}
+@interface MRGLocaleControlPanelPluginViewController : UIViewController <MRGControlPanelPlugin>
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [UIViewController new];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self showControlPanel];
-        });
-    });
-    
-    return YES;
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    if ([MRGControlPanel isControlPanelURL:url]) {
-        [self showControlPanel];
-        [_panel openURL:url];
-    }
-    return YES;
-}
-
-- (void)showControlPanel {
-    _panel = [MRGControlPanel controlPanel];
-    [_panel addPlugin:[MRGLocaleControlPanelPluginViewController plugin]];
-    self.window.rootViewController = [_panel rootViewController];
-    [self.window makeKeyAndVisible];
-}
+@property (nonatomic, readonly) NSString * displayName;
+@property (nonatomic, weak) id<MRGControlPanelPluginDelegate> delegate;
 
 @end

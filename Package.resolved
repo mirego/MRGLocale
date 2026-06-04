@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MRGControlPanel",
+        "repositoryURL": "https://github.com/mirego/MRGControlPanel.git",
+        "state": {
+          "branch": null,
+          "revision": "3c562b2aa3f0392b226aa7f9b1371e0e4ee265de",
+          "version": "0.1.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
